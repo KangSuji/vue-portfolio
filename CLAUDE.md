@@ -65,12 +65,18 @@ src/
     useDashboardStore.ts  # dashboard.json 로드(1회 캐시) + 파생 값 (메인·트렌딩 공유)
     useThemeStore.ts
   views/
-    pages/MainView.vue    # 카드 3개 + 월별 개봉 라인차트 + 이번 주 TOP10 바차트 + 기준일/TMDB 출처 표기
+    pages/MainView.vue    # 요약 카드 3개 + 월별 개봉(올해 vs 작년) + 트렌딩 TOP10 + 장르 TOP10
+                          # 로딩은 스켈레톤, 실패 시 다시 시도. 기준일/TMDB 출처 표기
     pages/TrendView.vue   # 트렌딩 영화/TV 캐러셀
     pages/DetailView.vue  # 상세 (store 없이 페이지 로컬 상태)
     pages/components/     # *ChartComp.vue (Bar/Line/Pie/Heatmap), mainCardComp.vue
   components/DateComp.vue # 연도 선택 (현재 미사용)
-  config/                 # chartOptions(ECharts 테마), progressConfig(Quasar Loading 래퍼), quasarConfig
+  config/
+    chartPalette.ts       # 다크/라이트 차트 색상 (useChartPalette) — 강조색 + 회색 emphasis 방식
+    dashboardCharts.ts    # 대시보드 차트 옵션 생성 (monthlyComparisonChart, rankedBarChart)
+    chartOptions.ts       # ECharts 기본 테마 (registerTheme)
+    progressConfig.ts     # Quasar Loading 래퍼 (트렌딩/상세 페이지)
+    quasarConfig.ts
 public/data/              # 수집 결과 (봇이 커밋, 직접 수정하지 말 것)
 ```
 
@@ -80,6 +86,9 @@ public/data/              # 수집 결과 (봇이 커밋, 직접 수정하지 �
 
 - "이번 달/올해"는 보는 사람의 날짜가 아니라 `dashboard.json`의 `baseDate`(수집 기준일, KST) 기준.
 - 연간 카드는 **연초~기준일 누적 vs 전년 같은 기간** 비교 (올해 전체 vs 작년 전체는 연말 전엔 항상 감소로 보임).
+- 기준 월 이후 달은 등록된 개봉 예정작만 있어 확정치가 아님 → 차트에서 점선, "다음 달" 카드는 증감률 없음.
+- 장르별 편수는 한 영화가 여러 장르에 속하면 각각 집계 (합계 ≠ 전체 편수).
+- 트렌딩 TOP10 차트는 트렌딩 상위 10편을 인기도 순으로 재정렬 (트렌딩 순위 ≠ 인기도).
 - 영화 "국내 개봉" 집계는 `release_date.gte/lte` + `region=KR` + `with_release_type=2|3`(극장).
   `primary_release_date`(전 세계 최초 개봉일)와 함께 쓰면 `region`이 무시되어 전 세계 등록 영화 수가 나온다.
 - discover의 `total_results`는 **최대 20,001**로 잘린다. 큰 범위 집계는 기간을 쪼개야 한다.
@@ -93,6 +102,9 @@ public/data/              # 수집 결과 (봇이 커밋, 직접 수정하지 �
 
 - 차트 컴포넌트는 ECharts 인스턴스를 mount 시 1회 생성 → `onUpdated`에서 `setOption(..., true)`로 교체 → `onBeforeUnmount`에서 dispose. 차트 옵션은 props를 통째로 넘기므로(`{ ...props }`) prop 이름이 ECharts 옵션 키와 같아야 함.
 - 차트 컴포넌트 props는 아직 런타임 선언(`type: Array/Object`)이라 타입이 느슨함.
+- 대시보드 차트 옵션은 `config/dashboardCharts.ts`에서 만들어 `v-bind`로 넘긴다. 색은 하드코딩하지 말고 `useChartPalette()` 사용 (테마 전환 시 자동 갱신).
+- ECharts tooltip formatter는 HTML을 그대로 렌더링하므로 외부 텍스트(작품 제목 등)는 `escapeHtml()` 필수.
+- `BarChartComp`는 막대 클릭 시 `itemClick(dataIndex)` 이벤트를 낸다.
 
 ## 컨벤션
 

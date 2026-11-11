@@ -2,7 +2,7 @@
 process.env.TZ = 'Asia/Seoul';
 
 import { describe, it, expect } from 'vitest';
-import { getMonthRanges, getYearRange, toDateString } from '../date';
+import { getMonthRanges, getYearRange, getYearToDateRange, toDateString } from '../date';
 
 describe('toDateString', () => {
   it('KST 자정 기준 날짜를 하루 밀리지 않고 반환한다', () => {
@@ -14,6 +14,26 @@ describe('toDateString', () => {
 describe('getYearRange', () => {
   it('1월 1일 ~ 12월 31일을 반환한다', () => {
     expect(getYearRange(2025)).toEqual({ gte: '2025-01-01', lte: '2025-12-31' });
+  });
+});
+
+describe('getYearToDateRange', () => {
+  it('1월 1일부터 기준일까지', () => {
+    expect(getYearToDateRange(new Date(2026, 10, 11))).toEqual({
+      gte: '2026-01-01',
+      lte: '2026-11-11',
+    });
+  });
+
+  it('전년 같은 기간', () => {
+    expect(getYearToDateRange(new Date(2026, 10, 11), -1)).toEqual({
+      gte: '2025-01-01',
+      lte: '2025-11-11',
+    });
+  });
+
+  it('윤년 2월 29일의 전년 동기는 2월 28일', () => {
+    expect(getYearToDateRange(new Date(2028, 1, 29), -1).lte).toBe('2027-02-28');
   });
 });
 

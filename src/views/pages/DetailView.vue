@@ -54,6 +54,9 @@
             </div>
           </div>
         </div>
+        <p v-else-if="notFound" class="detail-not-found">
+          상세 정보가 없습니다. 이번 주 트렌딩 목록에 있는 작품만 상세 정보를 제공합니다.
+        </p>
       </div>
     </div>
   </q-page>
@@ -61,13 +64,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import {
-  movieDetailToContent,
-  tmdbApi,
-  tvDetailToContent,
-  type ContentDetail,
-  type MediaType,
-} from '@/api';
+import { DataNotFoundError, fetchContentDetail, type ContentDetail, type MediaType } from '@/api';
 import progressConfig from '@/config/progressConfig';
 
 const router = useRouter();
@@ -76,6 +73,8 @@ const route = useRoute();
 // 상세 데이터는 이 페이지에서만 쓰므로 store가 아닌 로컬 상태로 관리한다
 // (전역 store에 두면 다른 작품 진입 시 이전 작품이 잠깐 보이는 문제가 있음)
 const detail = ref<ContentDetail | null>(null);
+// 수집 대상(이번 주 트렌딩)이 아니라 상세 JSON이 없는 경우
+const notFound = ref(false);
 
 const bgImageStyle = computed(() =>
   detail.value?.backdropUrl ? { backgroundImage: `url(${detail.value.backdropUrl})` } : {},
@@ -83,14 +82,13 @@ const bgImageStyle = computed(() =>
 
 const fetchDetail = async (category: MediaType, id: number) => {
   detail.value = null;
+  notFound.value = false;
   progressConfig.show();
   try {
-    detail.value =
-      category === 'movie'
-        ? movieDetailToContent(await tmdbApi.getMovieDetail(id))
-        : tvDetailToContent(await tmdbApi.getTvDetail(id));
+    detail.value = await fetchContentDetail(category, id);
   } catch (error) {
-    console.error('Error fetching content detail:', error);
+    if (error instanceof DataNotFoundError) notFound.value = true;
+    else console.error('Error fetching content detail:', error);
   } finally {
     progressConfig.hide();
   }

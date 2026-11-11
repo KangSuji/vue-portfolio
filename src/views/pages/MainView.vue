@@ -9,7 +9,7 @@
 
       <div class="main-chart-wrapper">
         <div class="main__chart">
-          <p class="main__chart__title">월별 개봉 영화({{ currentYear }})</p>
+          <p class="main__chart__title">월별 국내 극장 개봉 영화({{ currentYear }})</p>
           <LineChartComp
             :size="chartSize"
             :x-axis="monthlyXaxis"
@@ -19,7 +19,7 @@
           />
         </div>
         <div class="main__chart">
-          <p class="main__chart__title">오늘의 영화 순위 TOP 10</p>
+          <p class="main__chart__title">이번 주 트렌딩 영화 TOP 10</p>
           <BarChartComp
             :size="chartSize"
             :x-axis="movieXaxis"
@@ -28,6 +28,16 @@
           />
         </div>
       </div>
+
+      <div v-if="data" class="main-data-info">
+        <p>데이터 기준일 {{ data.baseDate }} · 매주 갱신</p>
+        <!-- TMDB API 이용 약관의 출처 표기 -->
+        <p>
+          This product uses the
+          <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">TMDB</a>
+          API but is not endorsed or certified by TMDB.
+        </p>
+      </div>
     </main>
   </q-page>
 </template>
@@ -35,7 +45,6 @@
 import { computed, onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useDashboardStore } from '@/stores/useDashboardStore';
-import { useTrendingStore } from '@/stores/useTrendingStore';
 import { getChangeRate, getMonthlySnapshot, getTopIndicesBy } from '@/utils/stats';
 import progressConfig from '@/config/progressConfig';
 import mainCardComp, { type Contents } from './components/mainCardComp.vue';
@@ -43,12 +52,12 @@ import BarChartComp from './components/BarChartComp.vue';
 import LineChartComp from './components/LineChartComp.vue';
 
 const dashboardStore = useDashboardStore();
-const trendingStore = useTrendingStore();
-const { monthlyMovieCounts, yearlyMovieCounts } = storeToRefs(dashboardStore);
-const { movies: trendingMovies } = storeToRefs(trendingStore);
+const { data, baseDate, monthlyMovieCounts, yearToDateMovieCounts, trendingMovies } =
+  storeToRefs(dashboardStore);
 
-const currentYear = new Date().getFullYear();
-const currentMonthIndex = new Date().getMonth();
+// "올해/이번 달"은 보는 사람의 현재 날짜가 아니라 데이터 수집 기준일로 판단한다
+const currentYear = computed(() => (baseDate.value ?? new Date()).getFullYear());
+const currentMonthIndex = computed(() => (baseDate.value ?? new Date()).getMonth());
 
 const chartSize = {
   width: '100%',
@@ -131,14 +140,17 @@ const barTooltip = {
 
 // ── 요약 카드 ───────────────────────────────────────────
 const contents = computed((): Contents[] => {
-  const { prev, current, next } = getMonthlySnapshot(monthlyMovieCounts.value, currentMonthIndex);
-  const { current: yearCurrent, prev: yearPrev } = yearlyMovieCounts.value;
+  const { prev, current, next } = getMonthlySnapshot(
+    monthlyMovieCounts.value,
+    currentMonthIndex.value,
+  );
+  const { current: yearCurrent, prev: yearPrev } = yearToDateMovieCounts.value;
 
   return [
     {
-      title: '이번 년도 영화 개봉작',
+      title: '올해 국내 개봉작',
       value: yearCurrent,
-      description: '이번 년도 개봉한 영화 수',
+      description: '전년 같은 기간 대비 증감량',
       icon: 'movie',
       increase: getChangeRate(yearPrev, yearCurrent),
     },
@@ -162,14 +174,12 @@ const contents = computed((): Contents[] => {
 
 // ── 데이터 조회 ─────────────────────────────────────────
 const fetchDashboard = async () => {
+  // 이미 불러온 상태면(다른 페이지에서 돌아온 경우) 로딩 표시 없이 바로 그린다
+  if (data.value) return;
+
   progressConfig.show();
   try {
-    // 서로 의존하지 않으므로 병렬로 요청
-    await Promise.all([
-      dashboardStore.fetchMonthlyMovieCounts(currentYear),
-      dashboardStore.fetchYearlyMovieCounts(currentYear),
-      trendingStore.fetchMovies('day'),
-    ]);
+    await dashboardStore.load();
   } catch (error) {
     console.error(error);
   } finally {

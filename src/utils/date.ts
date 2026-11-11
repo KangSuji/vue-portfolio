@@ -24,6 +24,25 @@ export function getYearRange(year: number): DateRange {
   };
 }
 
+/**
+ * 1월 1일 ~ 기준일 (연초 대비 누적 기간)
+ * @param yearOffset -1이면 전년 같은 기간 (전년 동기 비교용)
+ */
+export function getYearToDateRange(baseDate: Date, yearOffset = 0): DateRange {
+  const year = baseDate.getFullYear() + yearOffset;
+  return {
+    gte: toDateString(new Date(year, 0, 1)),
+    // 윤년 2월 29일 기준이면 전년은 3월 1일이 되므로 해당 월 말일로 맞춘다
+    lte: toDateString(
+      new Date(
+        year,
+        baseDate.getMonth(),
+        Math.min(baseDate.getDate(), new Date(year, baseDate.getMonth() + 1, 0).getDate()),
+      ),
+    ),
+  };
+}
+
 /** 해당 연도 12개월 각각의 1일 ~ 말일 */
 export function getMonthRanges(year: number): DateRange[] {
   return Array.from({ length: 12 }, (_, month) => ({

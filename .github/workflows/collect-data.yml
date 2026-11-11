@@ -1,0 +1,50 @@
+# TMDB 데이터 주간 수집
+# - scripts/collect.ts로 public/data/*.json을 생성하고, 변경이 있으면 main에 커밋한다.
+# - main에 push되면 Netlify가 자동으로 재배포한다. (주 1회 ≈ 월 4~5회 배포)
+# - 필요한 secret: TMDB_TOKEN (Settings → Secrets and variables → Actions)
+name: Collect TMDB data
+
+on:
+  schedule:
+    # 매주 월요일 03:00 KST (= 일요일 18:00 UTC). cron은 UTC 기준이며 수십 분 지연될 수 있다.
+    - cron: '0 18 * * 0'
+  # Actions 탭에서 수동 실행
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect-data
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Collect
+        run: npm run collect
+        env:
+          TMDB_TOKEN: ${{ secrets.TMDB_TOKEN }}
+
+      - name: Commit data
+        run: |
+          git add public/data
+          if git diff --cached --quiet; then
+            echo "데이터 변경 없음"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(data): TMDB 데이터 갱신 ($(TZ=Asia/Seoul date +%F))"
+          git push

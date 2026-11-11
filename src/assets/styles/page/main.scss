@@ -131,3 +131,16 @@ body {
     }
   }
 }
+
+// 데이터 기준일 · 출처 표기
+.main-data-info {
+  margin: 32px 0 16px;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: right;
+  opacity: 0.6;
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}

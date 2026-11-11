@@ -43,14 +43,14 @@
 import { computed, onBeforeUnmount, onMounted, reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { storeToRefs } from 'pinia';
-import { useTrendingStore } from '@/stores/useTrendingStore';
-import { movieToCard, tvToCard, type MediaCard, type MediaType } from '@/api';
+import { useDashboardStore } from '@/stores/useDashboardStore';
+import type { MediaCard, MediaType } from '@/api';
 import { chunk } from '@/utils/array';
 import progressConfig from '@/config/progressConfig';
 
 const router = useRouter();
-const trendingStore = useTrendingStore();
-const { movies, tvShows } = storeToRefs(trendingStore);
+const dashboardStore = useDashboardStore();
+const { data, trendingMovies, trendingTvShows } = storeToRefs(dashboardStore);
 
 // 캐러셀별 현재 슬라이드
 const slides = reactive<Record<MediaType, number>>({ movie: 0, tv: 0 });
@@ -76,12 +76,12 @@ const sections = computed(() => [
   {
     title: 'Trending Movies',
     mediaType: 'movie' as const,
-    groups: chunk(movies.value.map(movieToCard), itemsPerSlide.value),
+    groups: chunk(trendingMovies.value, itemsPerSlide.value),
   },
   {
     title: 'Trending TV Series',
     mediaType: 'tv' as const,
-    groups: chunk(tvShows.value.map(tvToCard), itemsPerSlide.value),
+    groups: chunk(trendingTvShows.value, itemsPerSlide.value),
   },
 ]);
 
@@ -93,9 +93,11 @@ const onClickDetail = (content: MediaCard) => {
 };
 
 const fetchTrending = async () => {
+  if (data.value) return;
+
   progressConfig.show();
   try {
-    await Promise.all([trendingStore.fetchMovies('day'), trendingStore.fetchTvShows('day')]);
+    await dashboardStore.load();
   } catch (error) {
     console.error('Error fetching trend list:', error);
   } finally {

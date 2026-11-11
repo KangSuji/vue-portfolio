@@ -212,3 +212,10 @@ body {
     }
   }
 }
+
+// 상세 JSON이 없는 작품 (이번 주 트렌딩 외)
+.detail-not-found {
+  margin-top: 48px;
+  text-align: center;
+  opacity: 0.7;
+}

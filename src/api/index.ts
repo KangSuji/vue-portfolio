@@ -1,11 +1,9 @@
 /**
- * 브라우저용 TMDB API 인스턴스
- * - import.meta.env는 이 파일에서만 사용한다. (src/api/tmdb/*는 Node 스크립트에서도 재사용)
+ * 앱에서 사용하는 데이터 API
+ * - 앱은 정적 JSON(public/data)만 읽는다. TMDB 호출은 scripts/collect.ts에서만 한다.
+ * - src/api/tmdb의 createTmdbApi를 앱 코드에서 import하지 말 것 (토큰이 번들에 들어감)
  */
-import { createTmdbApi } from './tmdb/api';
-
-export const tmdbApi = createTmdbApi(import.meta.env.VITE_TMDB_API_KEY);
-
-export { TmdbError } from './tmdb/client';
-export type * from './tmdb/types';
-export * from './tmdb/mappers';
+export { fetchDashboard, fetchContentDetail, DataNotFoundError } from './data/client';
+export type * from './data/types';
+export type { MediaType, TimeWindow } from './tmdb/types';
+export type { MediaCard, ContentDetail } from './tmdb/mappers';

@@ -31,6 +31,8 @@ export interface MediaCard {
   description: string;
   releaseDate: string;
   rating: number;
+  /** TMDB 인기도 점수 (대시보드 TOP10 차트 값) */
+  popularity: number;
 }
 
 export function movieToCard(movie: MovieSummary): MediaCard {
@@ -42,6 +44,7 @@ export function movieToCard(movie: MovieSummary): MediaCard {
     description: movie.overview,
     releaseDate: movie.release_date,
     rating: formatRating(movie.vote_average),
+    popularity: movie.popularity,
   };
 }
 
@@ -54,6 +57,7 @@ export function tvToCard(tv: TvSummary): MediaCard {
     description: tv.overview,
     releaseDate: tv.first_air_date,
     rating: formatRating(tv.vote_average),
+    popularity: tv.popularity,
   };
 }
 

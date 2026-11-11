@@ -25,6 +25,18 @@ TMDB 데이터를 주 1회 수집해 대시보드(차트·카드)와 트렌딩 �
 - UI: Quasar 2 (컴포넌트는 [src/config/quasarConfig.ts](src/config/quasarConfig.ts)에서 **개별 등록** — 새 Quasar 컴포넌트를 쓰려면 여기에 추가해야 함)
 - 차트: ECharts 5 (tree-shaking 방식 `echarts/core` + 필요한 차트/컴포넌트만 `echarts.use`)
 - 스타일: SCSS ([src/assets/styles/](src/assets/styles/), 진입점 `index.scss`), 컴포넌트 `<style>`은 거의 비어 있고 전역 SCSS에 페이지별로 작성
+- 폰트: Pretendard Variable (index.html에서 `<link>`로 로드). ECharts canvas용 폰트는 `config/chartOptions.ts` 테마에 별도 지정
+
+## 스타일 규칙
+
+- 색은 [theme.scss](src/assets/styles/theme.scss)의 **의미 기반 토큰**만 사용 (`--bg`, `--surface`, `--surface-2`, `--border`, `--text-primary/secondary/tertiary`, `--positive`, `--negative`, `--star` …). hex 직접 사용 금지.
+- 다크(기본)는 `:root`, 라이트는 `body.body--light`에서 같은 토큰을 덮어쓴다 → **페이지 SCSS에 `body--light` 블록을 만들지 말 것.** 새 색이 필요하면 토큰을 양쪽에 추가.
+- 다크는 Material Design 기준(배경 #121212, 표면 #1e1e1e). 텍스트 토큰은 배경·표면 대비 4.5:1 이상 유지.
+- 차트 색(`config/chartPalette.ts`)은 canvas라 CSS 변수를 못 읽으므로 theme.scss 값과 수동으로 맞춘다.
+- 자간: 제목·큰 숫자 `--tracking-tight`(-0.02em), 본문 `--tracking-normal`(-0.01em), 12~13px 작은 글씨 `--tracking-wide`(0). 행간: 본문 1.5, 제목 1.3~1.4, 긴 문단 1.7.
+- 페이지 루트 요소는 `.page_container`와 함께 쓰이고 그 padding이 우선 적용되므로, 상단 여백은 첫 자식의 margin으로 준다.
+- `:deep()`은 scoped 스타일 전용이라 전역 SCSS에서는 동작하지 않는다.
+- 트렌딩 캐러셀은 `height: auto`라 전환 시 "들어오는 슬라이드" 높이를 쓴다. 포스터 `aspect-ratio: 2/3`과 제목 2줄 고정 높이를 없애면 이미지 로딩 전 높이가 0이 되어 깜빡인다.
 - 수집 스크립트 실행: tsx
 
 ## 명령어

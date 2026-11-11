@@ -1,58 +1,70 @@
+/**
+ * 색상 · 타이포그래피 토큰
+ *
+ * - 컴포넌트 스타일은 아래 의미 기반 토큰만 사용한다. (hex 직접 사용 금지)
+ * - 다크(기본) 값은 :root, 라이트 값은 body.body--light에서 "같은 이름"으로 덮어쓴다.
+ *   → 새 스타일을 추가할 때 라이트 모드 블록을 따로 만들 필요가 없다.
+ * - 다크: Material Design 다크 테마 기준
+ *   배경 #121212, 카드 등 표면은 한 단계 밝게(#1e1e1e), 텍스트는 순백 대신 약 87% / 60% 밝기
+ * - 라이트: 다크의 "배경 < 표면" 관계를 그대로 뒤집어 배경 #f5f5f5, 표면 #ffffff
+ * - 대비: text-primary/secondary/tertiary 모두 배경·표면 대비 4.5:1 이상
+ * - 차트 색상(src/config/chartPalette.ts)은 이 값과 맞춰야 한다.
+ */
 :root {
+  color-scheme: dark;
+
+  // 브랜드
   --primary: #f5c518;
-  --primary-1: #facc15;
-  --primary-2: #d4ac18;
 
-  --white: #ffffff;
-  --white-1: #f8f8f8;
-  --white-2: #f2f2f2;
+  // 표면
+  --bg: #121212; // 페이지 배경
+  --surface: #1e1e1e; // 카드 · 헤더
+  --surface-2: #2a2a2a; // 칩 · 보조 버튼 · hover
+  --border: #2e2e2e;
+  --shadow: none;
 
-  --gray: #efefef;
-  --gray-1: rgba(235, 235, 235, 0.64);
-  --gray-2: #27272a;
+  // 텍스트
+  --text-primary: #e6e6e6; // 본문 · 제목
+  --text-secondary: #a3a3a3; // 보조 설명 · 비활성 메뉴
+  --text-tertiary: #8c8c8c; // 출처 등 부가 정보
+  --text-on-image: #ffffff; // 이미지 위 텍스트 (모드 무관)
 
-  --black: #000000;
-  --black-1: #111827;
-  --black-2: #09090b;
-  --black-3: #1f2937;
+  // 상태 (색만으로 의미를 전달하지 않도록 아이콘·부호와 함께 사용)
+  --positive: #34d399;
+  --negative: #f87171;
+  --star: #f5c518;
 
-  --dark: rgba(84, 84, 84, 0.65);
-  --dark-1: rgba(60, 60, 60, 0.29);
-  --dark-2: rgba(60, 60, 60, 0.12);
-  --dark-3: rgba(84, 84, 84, 0.48);
+  // 상세 페이지 배경 이미지 위 오버레이 (페이지 배경색을 섞는 비율: 중간 / 상단)
+  --hero-overlay-mid: 60%;
+  --hero-overlay-top: 20%;
 
-  --light-1: rgba(60, 60, 60, 0.66);
-  --color-green: #10b981;
-  --color-red: #b91010;
-
-  //--------다크모드 색상 적용
-  --dark-header: var(--black-1); //다크모드 헤더
-  --dark-bg: var(--black-2); //다크모드 배경
-  --dark-card: var(--dark-1); //다크모드 카드
-  --dark-tab-active: var(--black-2); // 탭 활성
-  --dark-tab-inactive: var(--gray-2); //탭 비활성 배경
-  --dark-txt: var(--white);
-  --dark-white-bg: var(--gray);
-  --dark-shadow: var(--dark-1);
-  --dark-border: var(--dark);
-  //-------라이트 모드
-  --light-header: var(--white-1); // 라이트 모드 헤더
-  --light-bg: var(--white); // 라이트 모드 배경
-  --light-card: var(--white-2); // 라이트 모드 카드
-  --light-tab-active: var(--primary-1); // 탭 활성
-  --light-tab-inactive: var(--gray); // 탭 비활성 배경
-  --light-txt: var(--black); // 텍스트 색상
-  --light-white-bg: var(--white); // 밝은 배경
-  --light-shadow: var(--dark-2); // 그림자
-  --light-border: var(--gray-1); // 테두리
+  // 타이포그래피
+  --font-sans:
+    'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  --tracking-tight: -0.02em; // 제목 · 큰 숫자
+  --tracking-normal: -0.01em; // 본문
+  --tracking-wide: 0; // 12~13px 작은 글씨 (자간을 줄이면 읽기 어려움)
 }
 
-/**
-차트 기본 색상
-차트1 #0088FE
-차트2 #00C49F
-차트3 #FFBB28
-차트4 #FF8042
-차트5 #8884D8
+body.body--light {
+  color-scheme: light;
 
-*/
+  --bg: #f5f5f5;
+  --surface: #ffffff;
+  --surface-2: #ededed;
+  --border: #e0e0e0;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+
+  --text-primary: #1f1f1f;
+  --text-secondary: #5c5c5c;
+  --text-tertiary: #6b6b6b;
+
+  --positive: #047857;
+  --negative: #dc2626;
+  --star: #a87f00;
+
+  // 밝은 배경을 섞으면 이미지가 탁해지고 글자 대비가 낮아지므로 더 많이 덮는다
+  --hero-overlay-mid: 85%;
+  --hero-overlay-top: 55%;
+}

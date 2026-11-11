@@ -21,9 +21,10 @@
           </template>
           <template v-else>
             <div v-for="n in 3" :key="n" class="main__card" aria-hidden="true">
-              <q-skeleton type="text" width="50%" :dark="isDark" />
-              <q-skeleton type="text" width="35%" height="48px" class="q-mt-md" :dark="isDark" />
-              <q-skeleton type="text" width="60%" class="q-mt-md" :dark="isDark" />
+              <!-- 실제 카드와 같은 높이로 맞춰 로딩 후 레이아웃이 흔들리지 않게 -->
+              <q-skeleton type="rect" width="40%" height="20px" :dark="isDark" />
+              <q-skeleton type="rect" width="30%" height="38px" :dark="isDark" />
+              <q-skeleton type="rect" width="55%" height="20px" :dark="isDark" />
             </div>
           </template>
         </div>

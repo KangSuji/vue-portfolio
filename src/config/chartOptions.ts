@@ -8,6 +8,11 @@ export const theme = {
   theme: {
     seriesCnt: '10',
     backgroundColor: 'rgba(0,0,0,0)',
+    // canvas는 CSS 폰트를 상속하지 않으므로 직접 지정 (theme.scss --font-sans와 동일)
+    textStyle: {
+      fontFamily:
+        "'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif",
+    },
     titleColor: '#333333',
     subtitleColor: '#aaaaaa',
     textColorShow: false,

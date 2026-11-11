@@ -171,6 +171,8 @@ const resizeChart = () => {
 onMounted(() => {
   drawChart();
   window.addEventListener('resize', resizeChart);
+  // 웹폰트 로딩 전에 그려지면 canvas 글자가 기본 폰트로 남으므로 로딩 후 다시 그린다
+  document.fonts?.ready.then(() => chart && drawChart());
 });
 
 onBeforeUnmount(() => {

@@ -28,7 +28,14 @@
             >
               <div class="bg-wrap">
                 <p class="trend-item-description">{{ content.description }}</p>
-                <img :src="content.image" :alt="content.title" />
+                <!-- width/height: 브라우저가 로딩 전에 비율(2:3)을 알 수 있게 -->
+                <img
+                  :src="content.image"
+                  :alt="content.title"
+                  width="220"
+                  height="330"
+                  decoding="async"
+                />
               </div>
               <p class="trend-item-title">{{ content.title }}</p>
             </div>
@@ -56,12 +63,13 @@ const { data, trendingMovies, trendingTvShows } = storeToRefs(dashboardStore);
 const slides = reactive<Record<MediaType, number>>({ movie: 0, tv: 0 });
 
 // ── 반응형: 한 슬라이드에 표시할 콘텐츠 개수 ─────────────
+// trending.scss의 @media (max-width: N)과 같은 기준이어야 한다 (max-width는 N을 포함하므로 <=)
 function getItemsPerSlide() {
   const width = window.innerWidth;
-  if (width < 500) return 1;
-  if (width < 768) return 2;
-  if (width < 1024) return 3;
-  if (width < 1440) return 4;
+  if (width <= 500) return 1;
+  if (width <= 768) return 2;
+  if (width <= 1024) return 3;
+  if (width <= 1440) return 4;
   return 5;
 }
 

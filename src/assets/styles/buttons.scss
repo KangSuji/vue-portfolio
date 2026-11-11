@@ -1,16 +1,18 @@
 .btn_search {
   height: 40px;
   padding: 8px 20px;
-  background-color: var(--dark-bg);
-  border: 1px solid var(--dark-border);
+  background-color: var(--bg);
+  border: 1px solid var(--border);
   border-radius: 8px;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  color: var(--text-primary);
   font-size: 14px;
-  transition: all 0.2s ease-in;
+  line-height: 1.5;
+  transition: background-color 0.2s ease-in;
   &:hover {
-    background-color: var(--gray-1);
+    background-color: var(--surface-2);
   }
 }

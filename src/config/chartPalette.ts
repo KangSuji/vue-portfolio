@@ -3,12 +3,14 @@ import { useThemeStore } from '@/stores/useThemeStore';
 
 /**
  * 차트 색상 (다크/라이트 모드별)
+ * - ECharts는 canvas에 그리므로 CSS 변수를 읽지 못한다.
+ *   → src/assets/styles/theme.scss의 토큰과 값을 맞춰 둔다.
  * - 강조(accent) + 회색(muted) "emphasis" 방식: 보여주고 싶은 값만 색을 쓰고 나머지는 회색
- * - accent는 배경(#09090b / #ffffff) 대비 3:1 이상, 색각 이상 시뮬레이션 검증 통과한 값
+ * - accent는 카드 표면 대비 3:1 이상, 색각 이상 시뮬레이션 검증 통과한 값
  * - 텍스트는 데이터 색을 쓰지 않고 text/textMuted만 사용
  */
 export interface ChartPalette {
-  /** 차트 배경 (페이지 배경과 동일) */
+  /** 차트가 놓이는 카드 배경 (theme.scss --surface) */
   surface: string;
   text: string;
   textMuted: string;
@@ -25,26 +27,26 @@ export interface ChartPalette {
 
 const PALETTES: Record<'dark' | 'light', ChartPalette> = {
   dark: {
-    surface: '#09090b',
-    text: '#e4e4e7',
-    textMuted: '#a1a1aa',
-    grid: '#27272a',
-    axis: '#3f3f46',
+    surface: '#1e1e1e',
+    text: '#e6e6e6',
+    textMuted: '#a3a3a3',
+    grid: '#2e2e2e',
+    axis: '#3a3a3a',
     accent: '#3987e5',
-    muted: '#5c5b57',
-    tooltipBg: '#18181b',
-    tooltipBorder: '#3f3f46',
+    muted: '#6b6b6b',
+    tooltipBg: '#2a2a2a',
+    tooltipBorder: '#3a3a3a',
   },
   light: {
     surface: '#ffffff',
-    text: '#18181b',
-    textMuted: '#52525b',
-    grid: '#e4e4e7',
-    axis: '#d4d4d8',
+    text: '#1f1f1f',
+    textMuted: '#5c5c5c',
+    grid: '#ededed',
+    axis: '#d6d6d6',
     accent: '#2a78d6',
-    muted: '#a3a29b',
+    muted: '#999999',
     tooltipBg: '#ffffff',
-    tooltipBorder: '#e4e4e7',
+    tooltipBorder: '#e0e0e0',
   },
 };
 

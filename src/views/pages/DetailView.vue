@@ -13,7 +13,9 @@
             <div class="detail_card--content">
               <div class="detail-card-title-area">
                 <p class="detail-card--title">{{ detail.title }}</p>
-                <p class="detail-card--title">{{ detail.originalTitle }}</p>
+                <p v-if="detail.originalTitle !== detail.title" class="detail-card--original-title">
+                  {{ detail.originalTitle }}
+                </p>
                 <p class="detail-card-sub-title">{{ detail.tagline }}</p>
               </div>
               <div class="flex items-center">

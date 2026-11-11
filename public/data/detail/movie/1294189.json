@@ -1,0 +1,24 @@
+{
+  "id": 1294189,
+  "mediaType": "movie",
+  "title": "더 몽구스",
+  "originalTitle": "The Mongoose",
+  "tagline": "멈추는 순간 끝이다, 영웅의 마지막 질주가 시작된다",
+  "genres": [
+    {
+      "id": 28,
+      "name": "액션"
+    },
+    {
+      "id": 53,
+      "name": "스릴러"
+    }
+  ],
+  "rating": 5.9,
+  "releaseDate": "2026-10-29",
+  "overview": "수많은 훈장을 받은 특수부대 출신의 참전 용사 라이언 플래너건, 전우들은 그를 '팽'이라 부른다. 아프가니스탄 전장에서 동료를 잃은 상처를 안고 살아가던 그는 저지르지도 않은 범죄의 누명을 쓰고 하루아침에 쫓기는 신세가 된다. 더 이상 잃을 것이 없는 팽은 핸들을 붙잡고 텍사스의 끝없는 도로 위로 내달린다. 그 뒤를 텍사스 고속도로 순찰대의 포프 소령과 수십 대의 경찰차가 끈질기게 추격하고, 그의 도주극은 방송을 타고 미국 전역에 생중계된다. 화면 너머의 시민들은 어느새 도망자에게 환호를 보내기 시작하고, 위기의 순간마다 탱커를 비롯한 옛 부대원들이 하나둘 그의 곁으로 모여든다. 헤어진 아내 타라마저 이 광기 어린 추격전에 휘말린 가운데, 팽은 그토록 질주하며 과연 무엇을 증명하려는 것일까?",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/eSS5mvSG84UUuvtbHel5Yu3Wik4.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/bySCyjQXNPgsnLTlgJpSMnRazPD.jpg",
+  "homepage": "",
+  "runtime": 99
+}

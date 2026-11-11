@@ -1,0 +1,28 @@
+{
+  "id": 1792170,
+  "mediaType": "movie",
+  "title": "모델 시티즌",
+  "originalTitle": "Model Citizen",
+  "tagline": "기억을 지운 자, 진실을 쥔 자는 누구인가",
+  "genres": [
+    {
+      "id": 80,
+      "name": "범죄"
+    },
+    {
+      "id": 878,
+      "name": "SF"
+    },
+    {
+      "id": 53,
+      "name": "스릴러"
+    }
+  ],
+  "rating": 6.3,
+  "releaseDate": "2026-11-03",
+  "overview": "기억을 잃은 채 흐릿한 과거의 파편에 시달리던 전직 경찰 스티븐 베이는 외딴 농장에서 일하며 기억상실 치료를 받기 시작한다. 하지만 기억이 돌아오기는커녕 그를 향한 적대감은 날이 갈수록 거세지고, 어디선가 그를 지켜보는 낯선 시선과 스스로도 통제할 수 없는 본능이 불쑥불쑥 고개를 든다. 머릿속을 스치는 장면들은 과연 자신이 살아온 삶의 기억인가, 아니면 누군가 심어놓은 환영인가? 숨통을 조여오는 압박이 한계에 다다른 순간, 베이는 산산이 조각난 현실 뒤에 숨겨진 진실을 찾아 필사적인 추적에 나서는데...",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/7SE0LBwgqiqZzkm9gKVbBAbcNQL.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/5MBdRdiGv3AKzZDGbni88xc6JFi.jpg",
+  "homepage": "",
+  "runtime": 93
+}

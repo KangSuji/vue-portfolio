@@ -1,0 +1,25 @@
+{
+  "id": 213375,
+  "mediaType": "tv",
+  "title": "비전퀘스트",
+  "originalTitle": "VisionQuest",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 10765,
+      "name": "Sci-Fi & Fantasy"
+    },
+    {
+      "id": 18,
+      "name": "드라마"
+    }
+  ],
+  "rating": 8.6,
+  "releaseDate": "2026-10-13",
+  "overview": "자신을 무기로 만들려는 자들을 피해 도망친 비전. 새롭게 태어난 그는 존재의 의미를 찾아 자신 안에 내장된 AI들, F.R.I.D.A.Y., E.D.I.T.H., J.A.R.V.I.S. 그리고 악명 높은 울트론과 대화를 나누며 답을 구한다. 하지만 자신의 목에 걸린 현상금 때문에 조용했던 삶은 산산조각 나고, 비전은 아들이 환생한 존재일지도 모르는 의문의 소년 토마스 셰퍼드와 함께 쫓기는 신세가 된다. 살아남기 위해서는 자신의 본성을 마주하고, 내면에 도사린 울트론의 유혹에 맞서며, 곁에 있는 어린 소년에게 숨겨진 비밀을 풀어야 한다.",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/eVuezVy7d7h4OWJHbdEagWAHKQd.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/31o1Ufd7bStD5dGEcpzapOjwaqx.jpg",
+  "homepage": "https://www.disneyplus.com/browse/entity-8744ec55-8d14-4631-99b4-c889a2d6013f",
+  "numberOfSeasons": 1,
+  "numberOfEpisodes": 8
+}

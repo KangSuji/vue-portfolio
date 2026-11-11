@@ -1,0 +1,25 @@
+{
+  "id": 84773,
+  "mediaType": "tv",
+  "title": "반지의 제왕: 힘의 반지",
+  "originalTitle": "The Lord of the Rings: The Rings of Power",
+  "tagline": "악마는 많은 이름을 가지고 있다.",
+  "genres": [
+    {
+      "id": 10759,
+      "name": "Action & Adventure"
+    },
+    {
+      "id": 10765,
+      "name": "Sci-Fi & Fantasy"
+    }
+  ],
+  "rating": 7.2,
+  "releaseDate": "2022-09-01",
+  "overview": "익숙하고도 새로운 캐릭터들은 가운데땅에서의 악의 부활을 마주한다. 안개산맥의 가장 어두운 곳부터 린돈의 장엄한 숲까지, 그리고 누메노르 섬 왕국부터 지도의 가장 먼 곳에 이르기까지 다양한 왕국과 캐릭터들은 운명을 다한 후에도 오래도록 지속될 유산을 남길 것이다.",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/jdhXffbObhagMkAXZeRgdft9m0H.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/achmETPRJZc9QVXsMPgHwYEyNar.jpg",
+  "homepage": "https://www.amazon.com/dp/B09QHC2LZM",
+  "numberOfSeasons": 3,
+  "numberOfEpisodes": 24
+}

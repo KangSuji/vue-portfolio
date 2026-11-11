@@ -1,0 +1,28 @@
+{
+  "id": 1368337,
+  "mediaType": "movie",
+  "title": "오디세이",
+  "originalTitle": "The Odyssey",
+  "tagline": "신에 맞서다",
+  "genres": [
+    {
+      "id": 12,
+      "name": "모험"
+    },
+    {
+      "id": 28,
+      "name": "액션"
+    },
+    {
+      "id": 14,
+      "name": "판타지"
+    }
+  ],
+  "rating": 8,
+  "releaseDate": "2026-07-15",
+  "overview": "10년간 이어진 트로이 전쟁을 승리로 이끈 영웅 '오디세우스'는 왕의 부재를 틈타 침탈과 권력 다툼이 벌어진 왕국에서 그를 기다리고 있는 아내 '페넬로페'와 아들 '텔레마코스'에게 돌아가기 위한 여정에 나선다. 그러나 신들의 분노를 산 그의 귀환 앞에는 거대한 폭풍과 괴물들, 그리고 거스를 수 없는 운명의 시련이 기다리고 있는데…",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/8ze9OcVuFiy94s6FFPvsn4oC2e1.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/iDiTY1wA35YWzTmXLTtqaxtN6tc.jpg",
+  "homepage": "",
+  "runtime": 173
+}

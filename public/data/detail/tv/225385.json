@@ -1,0 +1,29 @@
+{
+  "id": 225385,
+  "mediaType": "tv",
+  "title": "블랙 도브",
+  "originalTitle": "Black Doves",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 10759,
+      "name": "Action & Adventure"
+    },
+    {
+      "id": 9648,
+      "name": "미스터리"
+    },
+    {
+      "id": 80,
+      "name": "범죄"
+    }
+  ],
+  "rating": 7,
+  "releaseDate": "2024-12-05",
+  "overview": "정치인의 아내로 위장해 살아가던 스파이. 애인이 살해당한 사실을 알게 된 후, 진실을 밝히기 위해 옛 친구인 암살자와 함께 복수의 여정에 나선다.",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/oFT1UnhF3e37baGyrZks9Qm4YEf.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/uyL0MH8gtDlChQKpfpkVoUP41VY.jpg",
+  "homepage": "https://www.netflix.com/title/81682935",
+  "numberOfSeasons": 2,
+  "numberOfEpisodes": 12
+}

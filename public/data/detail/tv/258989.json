@@ -1,0 +1,21 @@
+{
+  "id": 258989,
+  "mediaType": "tv",
+  "title": "더 그레이티스트",
+  "originalTitle": "The Greatest",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 18,
+      "name": "드라마"
+    }
+  ],
+  "rating": 5,
+  "releaseDate": "2026-11-04",
+  "overview": "1960년 올림픽에서 금메달을 갓 따낸 젊은 복서 무하마드 알리(당시 이름 카시우스 클레이)는 헤비급 챔피언 타이틀을 목표로 삼는다. 새롭게 얻은 명성, 자신에 대한 의구심, 가족 간의 갈등, 그리고 정치적으로 격앙된 미국 사회와 맞서 싸우며, 한 세대에 한 번 나올까 말까 한 신동은 자신의 가장 위대한 적이 링 안에 있는 것이 아니라, 그가 온전한 자신이 되도록 내버려두지 않는 사회 속에 있음을 깨닫는다.",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/jQZ6Vgs11raX1AjQPDR1qF2zS1X.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/b57tPAE2rpUoNpa63o7U2sFvIZs.jpg",
+  "homepage": "https://www.amazon.com/dp/B0HH9X9LS9",
+  "numberOfSeasons": 1,
+  "numberOfEpisodes": 8
+}

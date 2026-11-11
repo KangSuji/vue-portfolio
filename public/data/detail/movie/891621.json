@@ -1,0 +1,28 @@
+{
+  "id": 891621,
+  "mediaType": "movie",
+  "title": "와일드 호스 나인",
+  "originalTitle": "Wild Horse Nine",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 35,
+      "name": "코미디"
+    },
+    {
+      "id": 80,
+      "name": "범죄"
+    },
+    {
+      "id": 53,
+      "name": "스릴러"
+    }
+  ],
+  "rating": 8.1,
+  "releaseDate": "2026-10-30",
+  "overview": "1973년 칠레 쿠데타를 앞두고 이스터섬으로 파견된 CIA 요원 ‘크리스’와 ‘리’가 임무를 수행하던 중 과거의 비밀과 정체불명의 음모에 휘말리게 되는 미스터리 첩보 스릴러",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/iVWvR4BWhdirFIMQwS1yNp2Hcft.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/3uLA0ujne91bkzFStZICCYeqhnt.jpg",
+  "homepage": "",
+  "runtime": 117
+}

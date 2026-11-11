@@ -1,0 +1,24 @@
+{
+  "id": 1263337,
+  "mediaType": "movie",
+  "title": "하트 오브 비스트",
+  "originalTitle": "Heart of the Beast",
+  "tagline": "함께라면 끝까지 갈 수 있다, 그 끝이 어디든",
+  "genres": [
+    {
+      "id": 12,
+      "name": "모험"
+    },
+    {
+      "id": 53,
+      "name": "스릴러"
+    }
+  ],
+  "rating": 7.4,
+  "releaseDate": "2026-09-19",
+  "overview": "특수부대에서 은퇴한 주임원사 제임스 벨몬트와 그의 군견 오딘. 전장에서 서로의 목숨을 지켜온 두 전우는 전쟁이 끝난 뒤에도 악몽과 트라우마에 시달린다. 둘은 수상비행기를 타고 알래스카의 외딴 호숫가를 찾아 잠시 고요한 시간을 보내지만, 돌아오는 하늘길에서 비행기가 추락하면서 문명과 단절된 광활한 황야 한가운데에 고립되고 만다. 가장 가까운 사람의 흔적까지는 무려 93킬로미터. 부상당한 몸을 이끌고 구조를 향해 걸음을 내딛은 제임스와 오딘 앞에는 거센 급류와 깎아지른 협곡, 굶주린 회색곰과 늑대 무리가 기다리고 있다. 인간의 잔혹함을 견뎌낸 개와 상처투성이가 된 사내, 이제 서로가 유일한 버팀목이 된 두 영혼은 과연 집으로 돌아갈 수 있을까?",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/zC4E522V1n3H4SGdYOaiqhF5DnS.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/6uVRPFflyJpo8Cx872olmlGTWla.jpg",
+  "homepage": "",
+  "runtime": 102
+}

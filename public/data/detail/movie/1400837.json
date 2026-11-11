@@ -1,0 +1,20 @@
+{
+  "id": 1400837,
+  "mediaType": "movie",
+  "title": "아더 마미",
+  "originalTitle": "Other Mommy",
+  "tagline": "엄마와 똑같은 얼굴, 그러나 엄마는 아니다",
+  "genres": [
+    {
+      "id": 27,
+      "name": "공포"
+    }
+  ],
+  "rating": 5.8,
+  "releaseDate": "2026-10-07",
+  "overview": "여덟 살 소녀 벨라의 집은 겉보기엔 평온하지만, 일에 쫓겨 늘 집을 비우는 엄마 어슐라와 집안을 돌보는 아빠 러스 사이에는 말하지 못한 균열이 깊어져 간다. 부모의 다툼을 숨죽여 듣는 밤이 늘어갈 무렵, 벨라의 방 옷장 속에서 엄마와 똑같은 얼굴을 한 존재가 모습을 드러낸다. 벨라가 '아더 마미'라 부르게 된 그것은 자주 비어 있던 엄마의 자리를 대신하듯 아이의 곁을 맴돌며 끊임없이 속삭인다. \"네 마음속에 들어가도 될까?\" 벨라는 그때마다 고개를 젓지만 차마 그것을 쫓아내지는 못한다. 그리고 러스가 아내와 똑같이 생긴 낯선 침입자를 목격하면서, 옷장 속에 머물던 기척은 집 안 곳곳으로 번져가기 시작한다. 눈앞의 엄마가 진짜인지조차 분간할 수 없게 된 가족, 아이의 마음을 원하는 그것이 노리는 것은 과연 무엇일까.",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/fGRNCssTRrhYZxNzykGGCoMsAVq.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/ncm7djsVTHQQMX2HEbEVxMUFchG.jpg",
+  "homepage": "",
+  "runtime": 93
+}

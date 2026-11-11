@@ -1,0 +1,25 @@
+{
+  "id": 1489,
+  "mediaType": "tv",
+  "title": "지미 키멜 라이브!",
+  "originalTitle": "Jimmy Kimmel Live!",
+  "tagline": "무엇이 튀어나올지 모르는 밤, 웃음은 지금부터 시작이다",
+  "genres": [
+    {
+      "id": 10767,
+      "name": "Talk"
+    },
+    {
+      "id": 35,
+      "name": "코미디"
+    }
+  ],
+  "rating": 5.3,
+  "releaseDate": "2003-01-26",
+  "overview": "늦은 밤, 로스앤젤레스의 스튜디오에 조명이 켜지면 하루를 정리하는 시간이 시작된다. 능청스러운 입담의 진행자는 그날의 뉴스와 화제를 날카롭고 유쾌한 독백으로 풀어내며 무대의 문을 연다. 이어 배우와 가수, 운동선수, 코미디언 등 쟁쟁한 게스트가 차례로 소파에 앉아 솔직한 이야기와 예측 불가한 농담을 주고받는다. 거리에서 시민들에게 던지는 엉뚱한 질문, 즉석에서 벌어지는 코미디 콩트, 무대를 뜨겁게 달구는 라이브 공연까지 방송은 한순간도 조용할 틈이 없다. 정치와 사회를 향한 풍자도 빠지지 않고, 때로는 웃음 뒤에 진심 어린 한마디가 남기도 한다. 오늘 밤, 어떤 게스트가 어떤 이야기를 들고 찾아올까?",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/bGB6bEbG4qL22C1SFupkdAxYC9i.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/taqVKvEmMlI2hs2g364fXWzv0ia.jpg",
+  "homepage": "https://abc.com/shows/jimmy-kimmel-live",
+  "numberOfSeasons": 25,
+  "numberOfEpisodes": 3377
+}

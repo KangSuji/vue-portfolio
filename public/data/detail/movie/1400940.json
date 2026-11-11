@@ -1,0 +1,28 @@
+{
+  "id": 1400940,
+  "mediaType": "movie",
+  "title": "클레이페이스",
+  "originalTitle": "Clayface",
+  "tagline": "공포의 민낯을 마주하라",
+  "genres": [
+    {
+      "id": 27,
+      "name": "공포"
+    },
+    {
+      "id": 53,
+      "name": "스릴러"
+    },
+    {
+      "id": 878,
+      "name": "SF"
+    }
+  ],
+  "rating": 7.4,
+  "releaseDate": "2026-10-19",
+  "overview": "할리우드의 주연 배우로 유명 영화제 수상을 눈 앞에 두며 꿈을 이루기 직전인 ‘맷 헤이건’. 그러나 한 순간의 실수로 범죄 조직의 타겟이 되어 얼굴이 처참하게 훼손되며 그의 빛나던 인생은 하루 아침에 비극으로 뒤바뀐다. 커리어도, 사람들도 모두 잃은 ‘맷’은 과학자 ‘닥터 케이틀린’의 미완성 최첨단 나노 기술에 마지막 희망을 걸고 기적적으로 예전의 얼굴을 되찾는 데 성공하지만 기쁨도 잠시 그의 몸에는 인간의 형체마저 무너뜨리는 끔찍한 변화가 시작된다. 또한 자신을 공격한 범죄 조직에 연루된 자들의 정체를 알게 되자 걷잡을 수 없는 분노에 사로잡힌 ‘맷’은 자신의 모든 것을 빼앗아간 이들을 향한 처절한 복수에 나서는데...",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/LSGpoSAlitss0KOvVakkeUToZo.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/uL4cIrNi2uaUnWIOQQ28EVnkETG.jpg",
+  "homepage": "",
+  "runtime": 109
+}

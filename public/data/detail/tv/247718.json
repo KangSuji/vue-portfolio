@@ -1,0 +1,25 @@
+{
+  "id": 247718,
+  "mediaType": "tv",
+  "title": "몹랜드",
+  "originalTitle": "MobLand",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 80,
+      "name": "범죄"
+    },
+    {
+      "id": 18,
+      "name": "드라마"
+    }
+  ],
+  "rating": 8.6,
+  "releaseDate": "2025-03-30",
+  "overview": "런던을 배경으로 강력한 국제 범죄 조직의 수장인 해리건 가족이 자신들의 영향력을 유지하기 위해 고군분투하는 이야기를 중심으로 전개된다. 해리건 가족이 경쟁 조직인 스티븐슨 가문과의 갈등 속에서 권력과 생존을 위해 벌이는 치열한 싸움과, 범죄 세계의 복잡한 관계와 음모를 다룬다.",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/5Xc7WpWsgflfgEMoBlf9TmWhfbH.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/h0OC7ouop8YLwbAVfS3UUE2Lw4T.jpg",
+  "homepage": "https://www.paramountplus.com/shows/mobland",
+  "numberOfSeasons": 2,
+  "numberOfEpisodes": 20
+}

@@ -1,0 +1,28 @@
+{
+  "id": 791523,
+  "mediaType": "movie",
+  "title": "와일드우드",
+  "originalTitle": "Wildwood",
+  "tagline": "아무도 건너지 못한 숲 너머로, 동생을 되찾으러 간다",
+  "genres": [
+    {
+      "id": 16,
+      "name": "애니메이션"
+    },
+    {
+      "id": 12,
+      "name": "모험"
+    },
+    {
+      "id": 14,
+      "name": "판타지"
+    }
+  ],
+  "rating": 8.5,
+  "releaseDate": "2026-10-19",
+  "overview": "포틀랜드에 사는 당찬 소녀 프루 매킬은 어느 날 갑자기 날아든 까마귀 떼가 갓난 남동생 맥을 낚아채 하늘 너머로 사라지는 믿기 힘든 광경을 목격한다. 까마귀들이 향한 곳은 도시의 경계 너머에 펼쳐진 마법의 숲, 누구도 건널 수 없다고 알려져 '건널 수 없는 황야'로 불리는 금단의 땅이다. 동생을 되찾겠다는 일념 하나로 숲에 뛰어든 프루의 뒤를 어설프지만 의리만큼은 누구보다 굳은 같은 반 친구 커티스가 따라나선다. 그러나 울창한 나무들 너머에는 말하는 동물들과 무법자 산적들, 그리고 슬픔과 야망에 사로잡힌 권력자들이 뒤얽혀 살아가는 거대한 세계가 숨겨져 있었다. 숲의 균형을 뒤흔드는 거대한 싸움 한가운데로 휘말려 들어간 두 아이는 과연 맥을 무사히 집으로 데려올 수 있을까?",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/snFM00mpNAfUzUtkdEW0uDEvXA0.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/sl5NJ1vtyhP9Vr88bB4blULsJYp.jpg",
+  "homepage": "",
+  "runtime": 132
+}

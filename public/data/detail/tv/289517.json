@@ -1,0 +1,25 @@
+{
+  "id": 289517,
+  "mediaType": "tv",
+  "title": "꿀알바",
+  "originalTitle": "꿀알바",
+  "tagline": "최소 사급 50배 보장, 꿀알바 수락하시겠습니까?",
+  "genres": [
+    {
+      "id": 9648,
+      "name": "미스터리"
+    },
+    {
+      "id": 18,
+      "name": "드라마"
+    }
+  ],
+  "rating": 7.5,
+  "releaseDate": "2026-10-30",
+  "overview": "빚에 쫓기던 청년 혁준 앞에 나타난 수상한 인력사무소. 시급은 최소 50배, 살아서 퇴근하면 다음엔 더 많이 준다? 가난에서 벗어나기 위해 오늘도 그는 알바 자리를 수락한다.",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/yyA9CI8BLNg6LtVRvmVxki4xiGb.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/gWedDgBsZkuOho2qe3q2sTQmbpO.jpg",
+  "homepage": "https://www.netflix.com/title/81997887",
+  "numberOfSeasons": 1,
+  "numberOfEpisodes": 8
+}

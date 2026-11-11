@@ -1,0 +1,25 @@
+{
+  "id": 253372,
+  "mediaType": "tv",
+  "title": "인스티튜트",
+  "originalTitle": "The Institute",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 9648,
+      "name": "미스터리"
+    },
+    {
+      "id": 10765,
+      "name": "Sci-Fi & Fantasy"
+    }
+  ],
+  "rating": 7.5,
+  "releaseDate": "2025-07-13",
+  "overview": "한밤중, 미니애폴리스의 교외에 위치한 열두 살 루크의 집에 괴한들이 침입해 부모님을 살해하고 루크를 납치한다. 루크는 원래 자신의 것과 거의 똑같은 모양으로 꾸며져 있는 방에서 깨어난다. 그곳은 TP(텔레파시)와 TK(염력)을 가진 아이들을 모아놓고 가혹한 훈련과 실험을 통해 그들의 능력을 키워 테러에 사용하는 ‘시설’이었다. 루크는 고문과 체벌을 당하며 자신이 익히 알아 온 세계관이 완전히 뒤바뀌는 경험을 하고, 그곳을 탈출하기로 결심한다. 귀에는 GPS칩이 삽입되어 있고, ‘시설’은 인근에 집이라고는 없는 깊은 숲속에 자리한 채 철책으로 둘러싸여 있으며, 루크 자신은 부모님의 죽음에 유력한 용의자로 지목되어 있는 등 상황은 그에게 전혀 유리하지 않다. 하지만 실험 약물의 부작용으로 입소자가 죽는 사건이 발생하자, 루크는 인간으로서의 자신을 잃느니 차라리 죽는 게 낫다는 생각에 정신이 번쩍 드는데…….",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/4MwXkOAMd9ObxdacasPFM32n9dZ.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/wWleS7DxsoGCkOPisNf8OZ2udiD.jpg",
+  "homepage": "https://www.mgmplus.com/series/the-institute",
+  "numberOfSeasons": 2,
+  "numberOfEpisodes": 16
+}

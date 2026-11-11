@@ -1,0 +1,24 @@
+{
+  "id": 1570488,
+  "mediaType": "movie",
+  "title": "반려견의 완벽한 크리스마스",
+  "originalTitle": "A Dog's Perfect Christmas",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 35,
+      "name": "코미디"
+    },
+    {
+      "id": 18,
+      "name": "드라마"
+    }
+  ],
+  "rating": 7.4,
+  "releaseDate": "2026-11-04",
+  "overview": "갑작스러운 건강 문제로 뿔뿔이 흩어진 고스 가족. 충직한 반려견 윈스테드는 크리스마스이브가 오기 전 가족을 다시 한 자리에 모으기 위해 온 힘을 다한다.",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/zvsNAohDHRWcGvbPSD7r3WojpKb.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/hhQT0TySg3LXCE8BEPpfPJ5zJA2.jpg",
+  "homepage": "https://www.netflix.com/kr/title/82090597",
+  "runtime": 102
+}

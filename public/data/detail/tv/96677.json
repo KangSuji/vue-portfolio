@@ -1,0 +1,29 @@
+{
+  "id": 96677,
+  "mediaType": "tv",
+  "title": "뤼팽",
+  "originalTitle": "Lupin",
+  "tagline": "아버지의 복수를 위해, 그는 전설의 괴도가 된다",
+  "genres": [
+    {
+      "id": 80,
+      "name": "범죄"
+    },
+    {
+      "id": 18,
+      "name": "드라마"
+    },
+    {
+      "id": 9648,
+      "name": "미스터리"
+    }
+  ],
+  "rating": 7.7,
+  "releaseDate": "2021-01-08",
+  "overview": "25년 전, 세네갈 이민자인 아버지 바바카르는 부유한 펠레그리니 가문으로부터 값비싼 목걸이를 훔쳤다는 누명을 쓰고 감옥에서 생을 마감했다. 홀로 남겨진 소년 아산 디옵은 아버지가 남긴 괴도 아르센 뤼팽의 소설을 품고 자랐고, 이제 그는 뤼팽처럼 변장과 속임수의 달인이 되어 있다. 문제의 목걸이가 루브르 박물관 경매에 나온다는 소식을 들은 아산은 대담한 절도 계획을 세우고, 이를 발판 삼아 아버지를 파멸로 몰아넣은 자들의 진실에 다가가려 한다. 파리의 거리를 무대로 경찰과 거대한 권력을 상대하는 아산의 기발하고 우아한 복수극이 막을 올린다.",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/e0i0ALSg9yspnYkmII6Pru32RbB.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/jgAZYiuRV37pCxmhx8NTdhE36RL.jpg",
+  "homepage": "https://www.netflix.com/title/80994082",
+  "numberOfSeasons": 3,
+  "numberOfEpisodes": 25
+}

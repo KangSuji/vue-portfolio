@@ -1,0 +1,28 @@
+{
+  "id": 1423191,
+  "mediaType": "movie",
+  "title": "레지던트 이블: 0번째 밤",
+  "originalTitle": "Resident Evil",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 27,
+      "name": "공포"
+    },
+    {
+      "id": 878,
+      "name": "SF"
+    },
+    {
+      "id": 12,
+      "name": "모험"
+    }
+  ],
+  "rating": 7.5,
+  "releaseDate": "2026-09-16",
+  "overview": "의료 택배 기사 브라이언은 긴급 배달을 맡아 심야에 라쿤 시티 종합 병원으로 향한다. 눈발을 헤치며 가던 중 갑자기 차로 뛰어든 누군가를 치게 되고, 죽은 줄 알았던 이가 다시 그를 덮쳐온다. 하나인 줄 알았던 정체불명의 존재들은 끊임없이 늘어나고, 통신마저 끊긴다. 브라이언은 자신이 무엇을 배달하고 있는지도 모른 채 눈앞에 닥친 존재들을 피해 필사의 사투를 벌이는데…",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/fQX4fRsagskLvCXnvPfdvh62QTG.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/3icyRAqgakNcQn6aDVz9libFmBA.jpg",
+  "homepage": "",
+  "runtime": 94
+}

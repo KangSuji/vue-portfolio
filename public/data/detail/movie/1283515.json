@@ -1,0 +1,24 @@
+{
+  "id": 1283515,
+  "mediaType": "movie",
+  "title": "베러티",
+  "originalTitle": "Verity",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 9648,
+      "name": "미스터리"
+    },
+    {
+      "id": 53,
+      "name": "스릴러"
+    }
+  ],
+  "rating": 7,
+  "releaseDate": "2026-09-30",
+  "overview": "어머니를 암으로 떠나보내고 생활고에 허덕이던 무명 소설가 로웬 애슐리에게 믿기 힘든 제안이 찾아온다. 베스트셀러 작가 베리티 크로포드의 남편 제레미가 사고로 집필을 이어갈 수 없게 된 아내를 대신해 인기 시리즈의 남은 세 권을 완성해 달라고 의뢰한 것. 자료를 정리하기 위해 크로포드 저택에 머물게 된 로웬은 침대에 누운 채 아무 반응도 없는 베리티의 서재에서 미완성 자전적 원고 하나를 발견한다. 그 안에는 한 여자의 소름 끼치는 고백과 입에 담기 어려운 비밀이 빼곡히 적혀 있다. 아무도 몰라야 할 글을 읽어버린 로웬은 점점 제레미에게 이끌리고, 저택 안에서 벌어지는 설명할 수 없는 일들과 함께 진실과 조작의 경계가 허물어지는 위험한 심리전에 갇혀가는데...",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/u0wEvdDBNrNZNtLxLrzoiXT09nj.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/cKetrF2dAnQ0AMV5i4BMOs41I5P.jpg",
+  "homepage": "",
+  "runtime": 117
+}

@@ -1,0 +1,29 @@
+{
+  "id": 259909,
+  "mediaType": "tv",
+  "title": "덱스터: 레저렉션",
+  "originalTitle": "Dexter: Resurrection",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 80,
+      "name": "범죄"
+    },
+    {
+      "id": 18,
+      "name": "드라마"
+    },
+    {
+      "id": 9648,
+      "name": "미스터리"
+    }
+  ],
+  "rating": 8.6,
+  "releaseDate": "2025-07-13",
+  "overview": "혼수상태에서 깨어난 덱스터 모건은 사라진 아들을 찾기 위해 뉴욕으로 향한다. 동시에 마이애미 경찰서의 엔젤 바티스타가 한 가지 질문을 갖고 찾아오면서, 덱스터는 과거가 자신을 뒤쫓고 있다는 걸 직감한다.",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/4bGLjXG5aHVe6Y66f7e2IV1YpiC.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/vcpj6rRDS93ImHCLPY8bwBuFGjR.jpg",
+  "homepage": "https://www.paramountplus.com/shows/dexter-resurrection/",
+  "numberOfSeasons": 2,
+  "numberOfEpisodes": 20
+}

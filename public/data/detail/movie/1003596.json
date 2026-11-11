@@ -1,0 +1,28 @@
+{
+  "id": 1003596,
+  "mediaType": "movie",
+  "title": "어벤져스: 둠스데이",
+  "originalTitle": "Avengers: Doomsday",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 878,
+      "name": "SF"
+    },
+    {
+      "id": 28,
+      "name": "액션"
+    },
+    {
+      "id": 12,
+      "name": "모험"
+    }
+  ],
+  "rating": 0,
+  "releaseDate": "2026-12-16",
+  "overview": "",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/z0JdEEe4SyR1OGJRbe0ckZ1jvoU.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/rObL4of4eFA8yWaN9pRFo9aOVNi.jpg",
+  "homepage": "",
+  "runtime": 165
+}

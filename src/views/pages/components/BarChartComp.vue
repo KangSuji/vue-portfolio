@@ -4,7 +4,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { onBeforeMount, onMounted, onUpdated, ref } from 'vue';
+import { onBeforeUnmount, onMounted, onUpdated, ref } from 'vue';
 import * as echarts from 'echarts/core';
 import {
   TitleComponent,
@@ -22,7 +22,7 @@ const props = defineProps({
   size: {
     type: Object,
     default: () => {
-      return { widht: '100%', height: '400px' };
+      return { width: '100%', height: '400px' };
     },
   },
   // x축
@@ -129,15 +129,15 @@ echarts.use([
   ToolboxComponent,
 ]);
 const barChart = ref();
-let chart: echarts.ECharts;
+let chart: echarts.ECharts | undefined;
 
+// 인스턴스는 한 번만 만들고, 이후에는 옵션만 교체한다
 const drawChart = () => {
-  if (chart) {
-    chart.dispose();
+  if (!chart) {
+    // 차트 테마 적용
+    echarts.registerTheme('theme', theme.theme);
+    chart = echarts.init(barChart.value, 'theme');
   }
-  // 차트 테마 적용
-  echarts.registerTheme('theme', theme.theme);
-  chart = echarts.init(barChart.value, 'theme');
   chart.setOption({ ...props }, true);
 };
 
@@ -146,7 +146,7 @@ onUpdated(() => {
 });
 
 const resizeChart = () => {
-  chart.resize();
+  chart?.resize();
 };
 
 onMounted(() => {
@@ -154,7 +154,9 @@ onMounted(() => {
   window.addEventListener('resize', resizeChart);
 });
 
-onBeforeMount(() => {
+onBeforeUnmount(() => {
   window.removeEventListener('resize', resizeChart);
+  chart?.dispose();
+  chart = undefined;
 });
 </script>

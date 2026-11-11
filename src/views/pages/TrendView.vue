@@ -130,7 +130,7 @@ const trendMoviesContents = computed(() => {
 });
 
 const trendTvContents = computed(() => {
-  const trendTvLists = trendTvList.value?.results ?? [];
+  const trendTvLists = trendTvList.value ?? [];
 
   return trendTvLists.map((item) => {
     return {
@@ -176,8 +176,7 @@ const onClickDetail = (contentId: number, category: string) => {
 const getTrendingList = async () => {
   progressConfig.show();
   try {
-    await useMovieStore().searchTrendMovieByDay();
-    await useMovieStore().searchTrendTvByDay();
+    await Promise.all([movieStore.searchTrendMovieByDay(), movieStore.searchTrendTvByDay()]);
   } catch (error) {
     console.error('Error fetching trend list:', error);
   } finally {

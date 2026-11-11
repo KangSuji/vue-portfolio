@@ -30,7 +30,7 @@ const chartProps = defineProps({
   size: {
     type: Object,
     default: () => {
-      return { widht: '100%', height: '650px' };
+      return { width: '100%', height: '650px' };
     },
   },
   // 차트 제목
@@ -114,20 +114,20 @@ const chartProps = defineProps({
   },
 });
 
-let chart;
-const drawChart = () => {
-  if (chart) {
-    chart.dispose();
-  }
+let chart: echarts.ECharts | undefined;
 
-  // 차트 테마 적용
-  echarts.registerTheme('theme', theme.theme);
-  chart = echarts.init(pieChart.value, 'theme');
+// 인스턴스는 한 번만 만들고, 이후에는 옵션만 교체한다
+const drawChart = () => {
+  if (!chart) {
+    // 차트 테마 적용
+    echarts.registerTheme('theme', theme.theme);
+    chart = echarts.init(pieChart.value, 'theme');
+  }
   chart.setOption({ ...chartProps }, true);
 };
 
 const chartResize = () => {
-  chart.resize();
+  chart?.resize();
 };
 
 onMounted(() => {
@@ -142,6 +142,8 @@ onUpdated(() => {
 
 onBeforeUnmount(() => {
   window.removeEventListener('resize', chartResize);
+  chart?.dispose();
+  chart = undefined;
 });
 </script>
 <style lang="scss" scoped></style>

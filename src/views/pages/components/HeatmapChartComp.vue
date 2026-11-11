@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onBeforeMount, onMounted, onUpdated, ref } from 'vue';
+import { onBeforeUnmount, onMounted, onUpdated, ref } from 'vue';
 import * as echarts from 'echarts/core';
 import {
   TitleComponent,
@@ -101,12 +101,14 @@ echarts.use([
 ]);
 
 const heatmapChart = ref();
-let chart: echarts.ECharts;
+let chart: echarts.ECharts | undefined;
 
+// 인스턴스는 한 번만 만들고, 이후에는 옵션만 교체한다
 const drawChart = () => {
-  if (chart) chart.dispose();
-  echarts.registerTheme('theme', theme.theme);
-  chart = echarts.init(heatmapChart.value, 'theme');
+  if (!chart) {
+    echarts.registerTheme('theme', theme.theme);
+    chart = echarts.init(heatmapChart.value, 'theme');
+  }
 
   chart.setOption({
     tooltip: props.tooltip,
@@ -119,7 +121,7 @@ const drawChart = () => {
 };
 
 const resizeChart = () => {
-  chart.resize();
+  chart?.resize();
 };
 
 onMounted(() => {
@@ -131,7 +133,9 @@ onUpdated(() => {
   drawChart();
 });
 
-onBeforeMount(() => {
+onBeforeUnmount(() => {
   window.removeEventListener('resize', resizeChart);
+  chart?.dispose();
+  chart = undefined;
 });
 </script>

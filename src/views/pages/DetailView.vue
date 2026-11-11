@@ -68,6 +68,7 @@ import { useRoute, useRouter } from 'vue-router';
 // store
 import { storeToRefs } from 'pinia';
 import { useMovieStore } from '@/stores/useMainStore';
+import progressConfig from '@/config/progressConfig';
 
 interface ContentsDetail {
   id: number;
@@ -146,11 +147,14 @@ const bgImageStyle = computed(() => {
 const getContentDetail = async () => {
   const type = category.value?.toString() || 'movie';
   const id = Number(contentId.value);
+  progressConfig.show();
   try {
-    movieStore.getContentDetail(id, type);
+    // await 하지 않으면 요청 실패가 catch로 잡히지 않음
+    await movieStore.getContentDetail(id, type);
   } catch (error) {
     console.error('Error fetching content detail:', error);
   } finally {
+    progressConfig.hide();
   }
 };
 

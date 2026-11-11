@@ -10,7 +10,7 @@
 
       <div class="main-chart-wrapper">
         <div class="main__chart">
-          <p class="main__chart__title">월별 개봉 영화(2025)</p>
+          <p class="main__chart__title">월별 개봉 영화({{ currentYear }})</p>
           <LineChartComp
             :size="chartSize"
             :x-axis="monthlyXaxis"
@@ -44,10 +44,15 @@ import LineChartComp from './components/LineChartComp.vue';
 const movieStore = useMovieStore();
 const { trendMvList, monthlyMovieCount, totalMovies } = storeToRefs(movieStore);
 
+const currentYear = new Date().getFullYear();
+
 const chartSize = {
-  widht: '100%',
+  width: '100%',
   height: '500px',
 };
+
+// 오늘의 트렌드 TOP 10 (x축·데이터 모두 같은 목록을 사용해야 개수가 맞음)
+const top10Movies = computed(() => (trendMvList.value ?? []).slice(0, 10));
 
 const monthlyXaxis = computed(() => {
   return [
@@ -81,9 +86,8 @@ const monthlyLegend = computed(() => {
 });
 
 const movieSeries = computed(() => {
-  const movieList = trendMvList.value ?? [];
+  const movieList = top10Movies.value;
   const top3Indices = movieList
-    .filter((value, index) => index < 10)
     .map((value, index) => ({ value, index }))
     .sort((a, b) => b.value.popularity - a.value.popularity)
     .slice(0, 3)
@@ -118,10 +122,7 @@ const movieSeries = computed(() => {
 });
 
 const movieXaxis = computed(() => {
-  const list = trendMvList.value ?? [];
-  return [
-    { type: 'category', data: list?.filter((item, idx) => idx < 10).map((item) => item.title) },
-  ];
+  return [{ type: 'category', data: top10Movies.value.map((item) => item.title) }];
 });
 
 const barTooltip = computed(() => {
@@ -154,12 +155,12 @@ const getIncreaseCnt = (prev, current): number => {
 };
 
 const fetchMovieCnt = async () => {
-  const currentYear = new Date().getFullYear();
-  const lastYear = new Date().getFullYear() - 1;
-  const getCurrentTotalMovieCnt = await movieStore.fetchMonthlyMovieReleases(currentYear);
-  const getPrevTotalMovieCnt = await movieStore.fetchMonthlyMovieReleases(lastYear);
+  const [current, prev] = await Promise.all([
+    movieStore.fetchMonthlyMovieReleases(currentYear),
+    movieStore.fetchMonthlyMovieReleases(currentYear - 1),
+  ]);
 
-  return { current: getCurrentTotalMovieCnt, prev: getPrevTotalMovieCnt };
+  return { current, prev };
 };
 const movieCnt = ref({
   current: 0,
@@ -204,19 +205,20 @@ const contents = computed((): Contents[] => {
 const getMovieList = async () => {
   progressConfig.show();
 
-  const currentYear = new Date().getFullYear();
-
-  const getMonthlyMovieCnt = movieStore.fetchMonthlyMovieCounts(currentYear);
-  const getTrendMoviesByDay = movieStore.searchTrendMovieByDay();
-
-  Promise.all([getMonthlyMovieCnt, getTrendMoviesByDay])
-    .then(() => {
-      fetchMovieCnt().then((result) => {
-        movieCnt.value = result;
-      });
-    })
-    .catch((error) => console.error(error))
-    .finally(() => progressConfig.hide());
+  // 세 요청 그룹은 서로 의존하지 않으므로 한 번에 병렬로 보낸다.
+  // (기존: fetchMovieCnt가 then 안에서 체이닝되지 않아 로딩이 먼저 닫히고 에러도 잡히지 않았음)
+  try {
+    const [, , cnt] = await Promise.all([
+      movieStore.fetchMonthlyMovieCounts(currentYear),
+      movieStore.searchTrendMovieByDay(),
+      fetchMovieCnt(),
+    ]);
+    movieCnt.value = cnt;
+  } catch (error) {
+    console.error(error);
+  } finally {
+    progressConfig.hide();
+  }
 };
 
 onMounted(() => {

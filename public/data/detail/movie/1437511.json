@@ -1,0 +1,28 @@
+{
+  "id": 1437511,
+  "mediaType": "movie",
+  "title": "How to Rob a Bank",
+  "originalTitle": "How to Rob a Bank",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 28,
+      "name": "액션"
+    },
+    {
+      "id": 80,
+      "name": "범죄"
+    },
+    {
+      "id": 53,
+      "name": "스릴러"
+    }
+  ],
+  "rating": 9,
+  "releaseDate": "2026-11-10",
+  "overview": "",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/ifYDZkr2qkHFz87TNVvlxajOxl5.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/8n8IiMO96sdB6sFfL0WyfRXsdJc.jpg",
+  "homepage": "",
+  "runtime": 122
+}

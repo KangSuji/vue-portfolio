@@ -1,0 +1,25 @@
+{
+  "id": 258742,
+  "mediaType": "tv",
+  "title": "올즈 페어: 여신의 재판",
+  "originalTitle": "All's Fair",
+  "tagline": "절대 안주하지 마세요.",
+  "genres": [
+    {
+      "id": 18,
+      "name": "드라마"
+    },
+    {
+      "id": 35,
+      "name": "코미디"
+    }
+  ],
+  "rating": 5,
+  "releaseDate": "2025-11-04",
+  "overview": "남성 위주의 법률 회사를 나온 여성 이혼 전문 변호사들이 자신들만의 강력한 로펌을 설립한다. 날카로운 지성과 복잡한 감정을 지닌 이들은 법정 안팎에서 고액의 이혼 소송, 은밀한 비밀, 변화하는 관계 속에서 치열하게 싸워나간다. 돈이 모든 것을 좌우하고 사랑이 전쟁터가 된 세상에서, 이들은 단순히 게임에 참여하는 것이 아니라 게임의 판도를 바꾼다.",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/fdILTjmDslgGEoXElZoIFy337d5.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/7t55fTjn0KRqCGPOSXM9RUk0zny.jpg",
+  "homepage": "https://www.hulu.com/series/alls-fair-65e808bd-2703-452d-bf62-d941d9d799fd",
+  "numberOfSeasons": 2,
+  "numberOfEpisodes": 17
+}

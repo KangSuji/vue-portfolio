@@ -1,0 +1,29 @@
+{
+  "id": 30984,
+  "mediaType": "tv",
+  "title": "블리치",
+  "originalTitle": "BLEACH",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 10759,
+      "name": "Action & Adventure"
+    },
+    {
+      "id": 16,
+      "name": "애니메이션"
+    },
+    {
+      "id": 10765,
+      "name": "Sci-Fi & Fantasy"
+    }
+  ],
+  "rating": 8.4,
+  "releaseDate": "2004-10-05",
+  "overview": "'쿠로사키 이치고'는 유령을 볼 수 있는 15세의 남자다. 특수한 체질을 가지고도 평범한 생활을 하던 이치고에게 갑자기 스스로를 사신이라고 소개하는 소녀 '쿠치키 루키아'가 나타난다. 유아울러 산 사람, 죽은 사람 안 가리고 공격해서 영혼을 먹어치우는 나쁜 혼령 '호로'도 모습을 드러낸다. 그런데 호로로 인해 이치고의 가족이 쓰러져가는데...",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/2cT8jkEVsAL86CVKALR4pnaVLDb.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/o0NsbcIvsllg6CJX0FBFY8wWbsn.jpg",
+  "homepage": "https://bleach-anime.com",
+  "numberOfSeasons": 2,
+  "numberOfEpisodes": 416
+}

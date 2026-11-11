@@ -1,0 +1,21 @@
+{
+  "id": 307853,
+  "mediaType": "tv",
+  "title": "오늘은 여우비",
+  "originalTitle": "今天是太阳雨",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 18,
+      "name": "드라마"
+    }
+  ],
+  "rating": 9.7,
+  "releaseDate": "2026-11-06",
+  "overview": "어려운 형편 속에서 장학금을 위해 노력하는 대학생 정우(양초월)와 복학 후 학과 1위를 차지한 진연주(동사성)가 만나 서로의 상처를 이해하며 성장하는 이야기입니다.",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/reDzSqynyCv734aXv9NflnpflMo.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/9LtN1ac91JAqXMke8CAJ6BiBSLS.jpg",
+  "homepage": "https://www.mgtv.com/h/817372.html",
+  "numberOfSeasons": 1,
+  "numberOfEpisodes": 24
+}

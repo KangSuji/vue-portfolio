@@ -1,0 +1,29 @@
+{
+  "id": 330613,
+  "mediaType": "tv",
+  "title": "กฎหลังเที่ยงคืน",
+  "originalTitle": "กฎหลังเที่ยงคืน",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 18,
+      "name": "드라마"
+    },
+    {
+      "id": 9648,
+      "name": "미스터리"
+    },
+    {
+      "id": 10765,
+      "name": "Sci-Fi & Fantasy"
+    }
+  ],
+  "rating": 8.5,
+  "releaseDate": "2026-10-28",
+  "overview": "",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/hJF2csAuSuNRJIacTkQmfkd6GgL.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/VgW1XPEFiwEZgYuR2Wl204DxGL.jpg",
+  "homepage": "",
+  "numberOfSeasons": 1,
+  "numberOfEpisodes": 10
+}

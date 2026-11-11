@@ -1,0 +1,25 @@
+{
+  "id": 2190,
+  "mediaType": "tv",
+  "title": "사우스 파크",
+  "originalTitle": "South Park",
+  "tagline": "",
+  "genres": [
+    {
+      "id": 35,
+      "name": "코미디"
+    },
+    {
+      "id": 16,
+      "name": "애니메이션"
+    }
+  ],
+  "rating": 8.3,
+  "releaseDate": "1997-08-13",
+  "overview": "사우스 파크 마을에 사는 꼬맹이 4인방. 생김새는 평범하지만 입은 거칠고 생각은 험하다. 정치, 연예, 문화, 시사까지 성역 없이 던져지는 녀석들의 돌직구. 사우스 파크만의 사이다 멘트와 블랙 유머가 살아있는 어른용 애니메이션.",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/k7n2EVge7G77eMr3brztRGG1fFU.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/3UviYOlhn8EgXMBuiT6MnUuo1w9.jpg",
+  "homepage": "http://southpark.cc.com/",
+  "numberOfSeasons": 29,
+  "numberOfEpisodes": 337
+}

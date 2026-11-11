@@ -1,0 +1,25 @@
+{
+  "id": 313738,
+  "mediaType": "tv",
+  "title": "유일무이 로맨스",
+  "originalTitle": "유일무이 로맨스",
+  "tagline": "탑스타와 취준생의 상호 덕질 로맨스",
+  "genres": [
+    {
+      "id": 35,
+      "name": "코미디"
+    },
+    {
+      "id": 18,
+      "name": "드라마"
+    }
+  ],
+  "rating": 0,
+  "releaseDate": "2026-11-09",
+  "overview": "평범한 취준생 공유일의 일상에 톱 배우 탁무이와 아이돌 류민이 침범해 오면서 벌어지는 사심 가득 로맨스",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/6AsTEQ8w1En6mImS87YTLoQS7uD.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/pSsJ2qQypNVzLNYKV6ixORDW7kM.jpg",
+  "homepage": "https://www.tving.com/contents/P001793028",
+  "numberOfSeasons": 1,
+  "numberOfEpisodes": 12
+}

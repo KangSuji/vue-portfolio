@@ -2,12 +2,18 @@
 process.env.TZ = 'Asia/Seoul';
 
 import { describe, it, expect } from 'vitest';
-import { getMonthRanges, toDateString } from '../useMainStore';
+import { getMonthRanges, getYearRange, toDateString } from '../date';
 
 describe('toDateString', () => {
   it('KST 자정 기준 날짜를 하루 밀리지 않고 반환한다', () => {
     expect(toDateString(new Date(2025, 0, 1))).toBe('2025-01-01');
     expect(toDateString(new Date(2025, 11, 31))).toBe('2025-12-31');
+  });
+});
+
+describe('getYearRange', () => {
+  it('1월 1일 ~ 12월 31일을 반환한다', () => {
+    expect(getYearRange(2025)).toEqual({ gte: '2025-01-01', lte: '2025-12-31' });
   });
 });
 

@@ -1,10 +1,10 @@
 <template>
   <q-page>
     <div class="page_container trand-container">
-      <div class="trand-wrap">
-        <p class="trand__title">Trending Movies</p>
+      <div v-for="section in sections" :key="section.title" class="trand-wrap">
+        <p class="trand__title">{{ section.title }}</p>
         <q-carousel
-          v-model="movieSlide"
+          v-model="slides[section.mediaType]"
           transition-prev="slide-right"
           transition-next="slide-left"
           swipeable
@@ -14,52 +14,25 @@
           arrows
           control-color="blue-grey-3"
         >
-          <template v-for="(group, groupIndex) in groupedTrendMoviesContents" :key="groupIndex">
-            <q-carousel-slide :name="groupIndex" class="row wrap justify-around">
-              <div
-                v-for="(content, index) in group"
-                :key="index"
-                class="trend-item"
-                @click="onClickDetail(content.id, 'movie')"
-              >
-                <div class="bg-wrap">
-                  <p class="trend-item-description">{{ content.description }}</p>
-                  <img :src="content.image" />
-                </div>
-                <p class="trend-item-title">{{ content.title }}</p>
+          <q-carousel-slide
+            v-for="(group, groupIndex) in section.groups"
+            :key="groupIndex"
+            :name="groupIndex"
+            class="row wrap justify-around"
+          >
+            <div
+              v-for="content in group"
+              :key="content.id"
+              class="trend-item"
+              @click="onClickDetail(content)"
+            >
+              <div class="bg-wrap">
+                <p class="trend-item-description">{{ content.description }}</p>
+                <img :src="content.image" :alt="content.title" />
               </div>
-            </q-carousel-slide>
-          </template>
-        </q-carousel>
-      </div>
-      <div class="trand-wrap">
-        <p class="trand__title">Trending TV Series</p>
-        <q-carousel
-          v-model="tvSlide"
-          transition-prev="slide-right"
-          transition-next="slide-left"
-          swipeable
-          animated
-          navigation
-          padding
-          arrows
-        >
-          <template v-for="(group, groupIndex) in groupedTrendTvContents" :key="groupIndex">
-            <q-carousel-slide :name="groupIndex" class="row wrap justify-around">
-              <div
-                v-for="(content, index) in group"
-                :key="index"
-                class="trend-item"
-                @click="onClickDetail(content.id, 'tv')"
-              >
-                <div class="bg-wrap">
-                  <p class="trend-item-description">{{ content.description }}</p>
-                  <img :src="content.image" />
-                </div>
-                <p class="trend-item-title">{{ content.title }}</p>
-              </div>
-            </q-carousel-slide>
-          </template>
+              <p class="trend-item-title">{{ content.title }}</p>
+            </div>
+          </q-carousel-slide>
         </q-carousel>
       </div>
     </div>
@@ -67,33 +40,22 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, onBeforeUnmount, ref } from 'vue';
-// store
+import { computed, onBeforeUnmount, onMounted, reactive, ref } from 'vue';
+import { useRouter } from 'vue-router';
 import { storeToRefs } from 'pinia';
-import { useMovieStore } from '@/stores/useMainStore';
-
-import router from '@/router';
+import { useTrendingStore } from '@/stores/useTrendingStore';
+import { movieToCard, tvToCard, type MediaCard, type MediaType } from '@/api';
+import { chunk } from '@/utils/array';
 import progressConfig from '@/config/progressConfig';
 
-interface Contents {
-  id: number;
-  title: string;
-  image: string;
-  description: string;
-  releaseDate: string;
-  rating: number;
-}
+const router = useRouter();
+const trendingStore = useTrendingStore();
+const { movies, tvShows } = storeToRefs(trendingStore);
 
-const movieStore = useMovieStore();
-const { trendMvList, trendTvList } = storeToRefs(movieStore);
+// 캐러셀별 현재 슬라이드
+const slides = reactive<Record<MediaType, number>>({ movie: 0, tv: 0 });
 
-const movieSlide = ref(0);
-
-const tvSlide = ref(0);
-
-// 한 슬라이드에 표시할 콘텐츠 개수
-const itemsPerSlide = ref(getItemsPerSlide());
-
+// ── 반응형: 한 슬라이드에 표시할 콘텐츠 개수 ─────────────
 function getItemsPerSlide() {
   const width = window.innerWidth;
   if (width < 500) return 1;
@@ -103,80 +65,37 @@ function getItemsPerSlide() {
   return 5;
 }
 
+const itemsPerSlide = ref(getItemsPerSlide());
+
 function handleResize() {
   itemsPerSlide.value = getItemsPerSlide();
 }
 
-onMounted(() => {
-  window.addEventListener('resize', handleResize);
-});
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', handleResize);
-});
+// ── 섹션 데이터 ─────────────────────────────────────────
+const sections = computed(() => [
+  {
+    title: 'Trending Movies',
+    mediaType: 'movie' as const,
+    groups: chunk(movies.value.map(movieToCard), itemsPerSlide.value),
+  },
+  {
+    title: 'Trending TV Series',
+    mediaType: 'tv' as const,
+    groups: chunk(tvShows.value.map(tvToCard), itemsPerSlide.value),
+  },
+]);
 
-const trendMoviesContents = computed(() => {
-  const trendListData = trendMvList.value ?? [];
-
-  return trendListData.map((item) => {
-    return {
-      id: item.id,
-      title: item.title ?? item.name,
-      image: `https://media.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`,
-      description: item.overview,
-      releaseDate: item.first_air_date ?? item.release_date,
-      rating: item.rating,
-    };
-  });
-});
-
-const trendTvContents = computed(() => {
-  const trendTvLists = trendTvList.value ?? [];
-
-  return trendTvLists.map((item) => {
-    return {
-      id: item.id,
-      title: item.title ?? item.name,
-      image: `https://media.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`,
-      description: item.overview,
-      releaseDate: item.first_air_date ?? item.release_date,
-      rating: item.rating,
-    };
-  });
-});
-
-// 콘텐츠를 그룹화하여 한 슬라이드에 여러 개 배치
-const groupedTrendMoviesContents = computed(() => {
-  const contents: Contents[] = trendMoviesContents.value;
-  const groups: Array<Contents[]> = [];
-  for (let i = 0; i < contents.length; i += itemsPerSlide.value) {
-    groups.push(contents.slice(i, i + itemsPerSlide.value));
-  }
-  return groups;
-});
-
-const groupedTrendTvContents = computed(() => {
-  const contents: Contents[] = trendTvContents.value;
-  const groups: Array<Contents[]> = [];
-  for (let i = 0; i < contents.length; i += itemsPerSlide.value) {
-    groups.push(contents.slice(i, i + itemsPerSlide.value));
-  }
-  return groups;
-});
-
-const onClickDetail = (contentId: number, category: string) => {
+const onClickDetail = (content: MediaCard) => {
   router.push({
     name: 'detail',
-    params: {
-      id: contentId,
-      category: category,
-    },
+    params: { category: content.mediaType, id: content.id },
   });
 };
 
-const getTrendingList = async () => {
+const fetchTrending = async () => {
   progressConfig.show();
   try {
-    await Promise.all([movieStore.searchTrendMovieByDay(), movieStore.searchTrendTvByDay()]);
+    await Promise.all([trendingStore.fetchMovies('day'), trendingStore.fetchTvShows('day')]);
   } catch (error) {
     console.error('Error fetching trend list:', error);
   } finally {
@@ -185,8 +104,11 @@ const getTrendingList = async () => {
 };
 
 onMounted(() => {
-  getTrendingList();
+  window.addEventListener('resize', handleResize);
+  fetchTrending();
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleResize);
 });
 </script>
-
-<style lang="scss" scoped></style>

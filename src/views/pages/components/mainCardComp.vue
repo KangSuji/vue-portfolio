@@ -2,57 +2,50 @@
   <div class="main__card">
     <div class="main__card__title-area">
       <q class="main__card__title-area--title">{{ content.title }}</q>
-      <span class="material-symbols-rounded"> {{ props.content.icon }} </span>
+      <span class="material-symbols-rounded"> {{ content.icon }} </span>
     </div>
 
     <div class="main__card__content">
-      <p class="number">{{ content.conent }}</p>
+      <p class="number">{{ content.value }}</p>
     </div>
     <div
       class="main__card__increase"
       :class="{
-        increase: props.content.increase && isIncrease,
-        decrease: props.content.increase && !isIncrease,
+        increase: hasChange && isIncrease,
+        decrease: hasChange && !isIncrease,
       }"
     >
-      <template v-if="props.content.increase">
+      <template v-if="hasChange">
         <span v-if="isIncrease" class="material-symbols-rounded"> arrow_upward </span>
-        <span v-if="!isIncrease" class="material-symbols-rounded"> arrow_downward </span>
-        <span>{{ `${props.content.increase}%` }} </span>
+        <span v-else class="material-symbols-rounded"> arrow_downward </span>
+        <span>{{ `${content.increase}%` }} </span>
       </template>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import { ref, watch, type PropType } from 'vue';
+import { computed } from 'vue';
 
 export interface Contents {
   icon: string;
   title: string;
-  conent: string | number;
-  increase?: number;
-  discription: string;
+  value: string | number;
+  /** 증감률(%). null이면 비교 불가로 표시하지 않음 */
+  increase?: number | null;
+  description: string;
 }
 
-const props = defineProps({
-  content: {
-    type: Object as PropType<Contents>,
-    default: () => ({
-      icon: 'movie',
-      title: '',
-      conent: '',
-      increase: undefined,
-      discription: '',
-    }),
-  },
+const props = withDefaults(defineProps<{ content?: Contents }>(), {
+  content: () => ({
+    icon: 'movie',
+    title: '',
+    value: '',
+    increase: null,
+    description: '',
+  }),
 });
 
-const isIncrease = ref(true);
-
-watch(
-  () => props.content,
-  () => {
-    isIncrease.value = Number(props.content.increase) > 0;
-  },
-);
+// 0%도 "변화 없음"이므로 표시하지 않는다
+const hasChange = computed(() => !!props.content.increase);
+const isIncrease = computed(() => Number(props.content.increase) > 0);
 </script>

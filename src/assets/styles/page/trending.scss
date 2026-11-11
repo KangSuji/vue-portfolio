@@ -37,6 +37,9 @@
   .q-carousel__navigation--bottom {
     bottom: 8px;
   }
+  .q-carousel__navigation .q-btn {
+    font-size: 8px !important;
+  }
 
   .q-carousel__slide {
     gap: 12px;
@@ -67,7 +70,6 @@
         width: 100%; // 1개
         max-width: 280px;
       }
-
       .trend-item-title {
         font-size: 15px;
         font-weight: 500;

@@ -1,8 +1,8 @@
 <template>
   <q-header class="header">
     <div class="flex items-center">
-      <q-btn @click="router.push('/')">
-        <span class="material-symbols-rounded header_logo cursor-pointer"> movie_info </span>
+      <q-btn class="header_logo" aria-label="메인으로 이동" @click="router.push('/')">
+        <AppLogo :size="36" />
       </q-btn>
       <ul class="header_list">
         <template v-for="menu in menus" :key="menu.code">
@@ -32,6 +32,7 @@ import { ref } from 'vue';
 import router from '@/router';
 import { useRoute } from 'vue-router';
 import { applyTheme, getTheme, ThemeType } from '@/utils/themeUtils';
+import AppLogo from '@/components/AppLogo.vue';
 
 interface MeunList {
   label: string;

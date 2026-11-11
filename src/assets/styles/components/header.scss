@@ -46,8 +46,7 @@
     }
   }
   &_logo {
-    font-size: 36px;
-    color: var(--text-primary);
+    color: var(--text-primary); // AppLogo의 currentColor
   }
   &_right {
     display: flex;

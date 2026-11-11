@@ -1,25 +1,26 @@
 <template>
   <div class="main__card">
     <div class="main__card__title-area">
-      <q class="main__card__title-area--title">{{ content.title }}</q>
-      <span class="material-symbols-rounded"> {{ content.icon }} </span>
+      <p class="main__card__title-area--title">{{ content.title }}</p>
+      <span class="material-symbols-rounded" aria-hidden="true"> {{ content.icon }} </span>
     </div>
 
     <div class="main__card__content">
-      <p class="number">{{ content.value }}</p>
+      <p class="number">
+        {{ displayValue }}<span v-if="content.unit" class="unit">{{ content.unit }}</span>
+      </p>
     </div>
-    <div
-      class="main__card__increase"
-      :class="{
-        increase: hasChange && isIncrease,
-        decrease: hasChange && !isIncrease,
-      }"
-    >
+
+    <div class="main__card__increase" :class="trendClass">
+      <!-- 색만으로 증감을 표현하지 않도록 화살표 + 부호를 함께 표시 -->
       <template v-if="hasChange">
-        <span v-if="isIncrease" class="material-symbols-rounded"> arrow_upward </span>
-        <span v-else class="material-symbols-rounded"> arrow_downward </span>
-        <span>{{ `${content.increase}%` }} </span>
+        <span class="material-symbols-rounded" aria-hidden="true">
+          {{ isIncrease ? 'arrow_upward' : 'arrow_downward' }}
+        </span>
+        <span class="rate">{{ signedRate }}</span>
+        <span class="label">{{ content.comparisonLabel }}</span>
       </template>
+      <span v-else class="label">{{ content.caption }}</span>
     </div>
   </div>
 </template>
@@ -29,23 +30,34 @@ import { computed } from 'vue';
 export interface Contents {
   icon: string;
   title: string;
-  value: string | number;
-  /** 증감률(%). null이면 비교 불가로 표시하지 않음 */
+  value: number | null;
+  /** 값 뒤 단위 (예: '편') */
+  unit?: string;
+  /** 증감률(%). null이면 비교하지 않음 */
   increase?: number | null;
-  description: string;
+  /** 증감률 비교 기준 (예: '전월 대비') */
+  comparisonLabel?: string;
+  /** 증감률이 없을 때 대신 보여줄 설명 */
+  caption?: string;
 }
 
-const props = withDefaults(defineProps<{ content?: Contents }>(), {
-  content: () => ({
-    icon: 'movie',
-    title: '',
-    value: '',
-    increase: null,
-    description: '',
-  }),
+const props = defineProps<{ content: Contents }>();
+
+const displayValue = computed(() =>
+  props.content.value === null ? '-' : props.content.value.toLocaleString('ko-KR'),
+);
+
+const hasChange = computed(
+  () => props.content.increase !== null && props.content.increase !== undefined,
+);
+const isIncrease = computed(() => (props.content.increase ?? 0) >= 0);
+const signedRate = computed(() => {
+  const rate = props.content.increase ?? 0;
+  return `${rate > 0 ? '+' : ''}${rate}%`;
 });
 
-// 0%도 "변화 없음"이므로 표시하지 않는다
-const hasChange = computed(() => !!props.content.increase);
-const isIncrease = computed(() => Number(props.content.increase) > 0);
+const trendClass = computed(() => {
+  if (!hasChange.value || props.content.increase === 0) return '';
+  return isIncrease.value ? 'increase' : 'decrease';
+});
 </script>

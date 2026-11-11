@@ -24,8 +24,13 @@ export const useDashboardStore = defineStore('dashboard', () => {
     return pending;
   }
 
-  const baseDate = computed(() => (data.value ? new Date(`${data.value.baseDate}T00:00:00`) : null));
-  const monthlyMovieCounts = computed(() => data.value?.movies.monthlyCounts ?? []);
+  const baseDate = computed(() =>
+    data.value ? new Date(`${data.value.baseDate}T00:00:00`) : null,
+  );
+  const monthlyMovieCounts = computed(
+    () => data.value?.movies.monthlyCounts ?? { current: [], prev: [] },
+  );
+  const genreCounts = computed(() => data.value?.movies.genreCounts ?? []);
   const yearToDateMovieCounts = computed(
     () => data.value?.movies.yearToDateCounts ?? { current: 0, prev: 0 },
   );
@@ -38,6 +43,7 @@ export const useDashboardStore = defineStore('dashboard', () => {
     baseDate,
     monthlyMovieCounts,
     yearToDateMovieCounts,
+    genreCounts,
     trendingMovies,
     trendingTvShows,
   };

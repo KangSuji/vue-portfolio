@@ -12,6 +12,7 @@ import {
   GridComponent,
   LegendComponent,
   ToolboxComponent,
+  AriaComponent,
 } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
 import { LineChart } from 'echarts/charts';
@@ -143,6 +144,7 @@ echarts.use([
   LineChart,
   CanvasRenderer,
   ToolboxComponent,
+  AriaComponent,
 ]);
 const barChart = ref();
 let chart: echarts.ECharts | undefined;
@@ -154,7 +156,8 @@ const drawChart = () => {
     echarts.registerTheme('theme', theme.theme);
     chart = echarts.init(barChart.value, 'theme');
   }
-  chart.setOption({ ...props }, true);
+  // aria: 화면 낭독기용 차트 설명 자동 생성
+  chart.setOption({ ...props, aria: { enabled: true } }, true);
 };
 
 onUpdated(() => {

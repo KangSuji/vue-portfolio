@@ -12,6 +12,7 @@ import {
   GridComponent,
   LegendComponent,
   ToolboxComponent,
+  AriaComponent,
 } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
 import { BarChart } from 'echarts/charts';
@@ -127,7 +128,14 @@ echarts.use([
   BarChart,
   CanvasRenderer,
   ToolboxComponent,
+  AriaComponent,
 ]);
+
+const emit = defineEmits<{
+  /** 막대 클릭 (데이터 인덱스) */
+  itemClick: [dataIndex: number];
+}>();
+
 const barChart = ref();
 let chart: echarts.ECharts | undefined;
 
@@ -137,8 +145,10 @@ const drawChart = () => {
     // 차트 테마 적용
     echarts.registerTheme('theme', theme.theme);
     chart = echarts.init(barChart.value, 'theme');
+    chart.on('click', (params) => emit('itemClick', params.dataIndex));
   }
-  chart.setOption({ ...props }, true);
+  // aria: 화면 낭독기용 차트 설명 자동 생성
+  chart.setOption({ ...props, aria: { enabled: true } }, true);
 };
 
 onUpdated(() => {

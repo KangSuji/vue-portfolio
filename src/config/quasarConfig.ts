@@ -49,6 +49,7 @@ import {
   QPopupProxy,
   QCarousel,
   QCarouselSlide,
+  QSkeleton,
 } from 'quasar';
 
 export function setupQuasar(app: App) {
@@ -100,6 +101,7 @@ export function setupQuasar(app: App) {
       QPopupProxy,
       QCarousel,
       QCarouselSlide,
+      QSkeleton,
     },
     directives: { ClosePopup },
     plugins: {

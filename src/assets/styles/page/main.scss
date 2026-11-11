@@ -144,3 +144,75 @@ body {
     text-decoration: underline;
   }
 }
+
+// ── 대시보드 UX (요약 카드 · 차트 설명 · 오류) ─────────────────
+.main-container {
+  .main-card-wrapper .main__card {
+    &__title-area--title {
+      font-size: 16px;
+    }
+    &__content .number {
+      .unit {
+        margin-left: 4px;
+        font-size: 16px;
+        font-weight: 500;
+        opacity: 0.7;
+      }
+    }
+    &__increase {
+      gap: 4px;
+      min-height: 20px;
+      .rate {
+        font-weight: 700;
+      }
+      // 비교 기준 설명은 증감 색이 아닌 본문 색
+      .label {
+        margin-left: 2px;
+        color: var(--dark-txt);
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .main-chart-wrapper .main__chart {
+    color: var(--dark-txt);
+    &--full {
+      width: 100%;
+      @media (max-width: 1680px) {
+        width: 100%;
+      }
+    }
+    &__title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    &__caption {
+      margin: 4px 0 16px;
+      font-size: 12px;
+      opacity: 0.6;
+    }
+  }
+
+  .main-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 80px;
+    color: var(--dark-txt);
+    &__retry {
+      padding: 6px 20px;
+      border-radius: 8px;
+    }
+  }
+}
+
+body.body--light .main-container {
+  .main-card-wrapper .main__card__increase .label,
+  .main-chart-wrapper .main__chart,
+  .main-error {
+    color: var(--light-txt);
+  }
+}

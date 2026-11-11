@@ -6,7 +6,13 @@
 import type { TimeWindow } from '../tmdb/types';
 import type { ContentDetail, MediaCard } from '../tmdb/mappers';
 
-export const SCHEMA_VERSION = 1;
+export const SCHEMA_VERSION = 2;
+
+export interface GenreCount {
+  id: number;
+  name: string;
+  count: number;
+}
 
 /** public/data/dashboard.json */
 export interface DashboardData {
@@ -16,8 +22,17 @@ export interface DashboardData {
   /** 집계 기준일 'YYYY-MM-DD' (KST). 화면의 "이번 달/올해"는 이 날짜 기준 */
   baseDate: string;
   movies: {
-    /** baseDate 연도의 월별 한국 극장 개봉 영화 수 (index 0 = 1월) */
-    monthlyCounts: number[];
+    /**
+     * 월별 한국 극장 개봉 영화 수 (index 0 = 1월)
+     * - current: baseDate 연도. baseDate 이후 달은 등록된 개봉 예정작만 포함되어 확정치가 아님
+     * - prev: 전년도
+     */
+    monthlyCounts: { current: number[]; prev: number[] };
+    /**
+     * 연초 ~ baseDate 개봉작의 장르별 편수 (많은 순)
+     * - 한 영화가 여러 장르에 속하면 각 장르에 모두 집계된다 (합계 ≠ 전체 편수)
+     */
+    genreCounts: GenreCount[];
     /**
      * 연초 ~ baseDate 누적 개봉 영화 수(current)와 전년 같은 기간(prev)
      * (올해 전체와 작년 전체를 비교하면 연말 전에는 항상 감소로 보이므로 동기 비교)

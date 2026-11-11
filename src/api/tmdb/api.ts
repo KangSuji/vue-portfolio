@@ -1,6 +1,7 @@
 import { createTmdbClient } from './client';
 import { getMonthRanges, getYearRange, type DateRange } from '../../utils/date';
 import type {
+  Genre,
   MovieDetail,
   MovieSummary,
   Paginated,
@@ -43,15 +44,25 @@ export function createTmdbApi(token: string) {
    * - with_release_type 2|3 = 극장 개봉(제한/일반). 없으면 VOD·TV 공개 등도 포함된다.
    * - total_results는 최대 20,001까지만 반환되므로, 전 세계 기준 연간 집계는 쓸 수 없다.
    */
-  const countMoviesReleased = async ({ gte, lte }: DateRange): Promise<number> => {
+  const countMoviesReleased = async (
+    { gte, lte }: DateRange,
+    filter: { genreId?: number } = {},
+  ): Promise<number> => {
     const res = await get<Paginated<MovieSummary>>('/discover/movie', {
       'release_date.gte': gte,
       'release_date.lte': lte,
       region: REGION,
       with_release_type: '2|3',
+      with_genres: filter.genreId,
       language: LANGUAGE,
     });
     return res.total_results;
+  };
+
+  /** 영화 장르 목록 (한국어 이름) */
+  const getMovieGenres = async (): Promise<Genre[]> => {
+    const res = await get<{ genres: Genre[] }>('/genre/movie/list', { language: LANGUAGE });
+    return res.genres;
   };
 
   /**
@@ -69,10 +80,11 @@ export function createTmdbApi(token: string) {
 
   /** 연도별 월간 개봉 영화 수 (요청 12회, 병렬) */
   const countMoviesByMonth = (year: number) =>
-    Promise.all(getMonthRanges(year).map(countMoviesReleased));
+    Promise.all(getMonthRanges(year).map((range) => countMoviesReleased(range)));
 
   /** 연도별 월간 첫 방영 TV 수 (요청 12회, 병렬) */
-  const countTvByMonth = (year: number) => Promise.all(getMonthRanges(year).map(countTvFirstAired));
+  const countTvByMonth = (year: number) =>
+    Promise.all(getMonthRanges(year).map((range) => countTvFirstAired(range)));
 
   /** 연도 전체 개봉 영화 수 */
   const countMoviesInYear = (year: number) => countMoviesReleased(getYearRange(year));
@@ -83,6 +95,7 @@ export function createTmdbApi(token: string) {
     getTrendingAll,
     getMovieDetail,
     getTvDetail,
+    getMovieGenres,
     countMoviesReleased,
     countTvFirstAired,
     countMoviesByMonth,

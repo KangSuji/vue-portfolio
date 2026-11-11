@@ -20,7 +20,12 @@ import {
   tvToCard,
   type MediaCard,
 } from '../src/api/tmdb/mappers';
-import { SCHEMA_VERSION, type DashboardData, type DetailData } from '../src/api/data/types';
+import {
+  SCHEMA_VERSION,
+  type DashboardData,
+  type DetailData,
+  type GenreCount,
+} from '../src/api/data/types';
 import { getYearToDateRange, toDateString } from '../src/utils/date';
 import { mapWithConcurrency } from '../src/utils/async';
 
@@ -32,7 +37,7 @@ const OUT_DIR = path.join(ROOT, 'public', 'data');
 const DETAIL_DIR = path.join(OUT_DIR, 'detail');
 
 const TIME_WINDOW = 'week' as const;
-/** 상세 조회 동시 요청 수 (TMDB rate limit 여유 확보) */
+/** 상세·장르 조회 동시 요청 수 (TMDB rate limit 여유 확보) */
 const DETAIL_CONCURRENCY = 8;
 
 function loadToken(): string {
@@ -52,28 +57,51 @@ function loadToken(): string {
 /** 잘못된 데이터가 커밋·배포되지 않도록 최소한의 형태를 검증한다 */
 function validate(data: DashboardData) {
   const errors: string[] = [];
-  if (data.movies.monthlyCounts.length !== 12) errors.push('월별 개봉 수가 12개월이 아님');
+  const { monthlyCounts, genreCounts } = data.movies;
+  if (monthlyCounts.current.length !== 12 || monthlyCounts.prev.length !== 12) {
+    errors.push('월별 개봉 수가 12개월이 아님');
+  }
+  if (genreCounts.length === 0) errors.push('장르별 집계가 비어 있음');
   if (data.trending.movies.length === 0) errors.push('트렌딩 영화가 비어 있음');
   if (data.trending.tvShows.length === 0) errors.push('트렌딩 TV가 비어 있음');
   if (errors.length) throw new Error(`데이터 검증 실패: ${errors.join(', ')}`);
 }
 
+/** 연초 ~ 기준일 개봉작의 장르별 편수 (장르 수만큼 요청, 동시 수 제한) */
+async function collectGenreCounts(api: TmdbApi, now: Date): Promise<GenreCount[]> {
+  const range = getYearToDateRange(now);
+  const genres = await api.getMovieGenres();
+
+  const counts = await mapWithConcurrency(genres, DETAIL_CONCURRENCY, async (genre) => ({
+    id: genre.id,
+    name: genre.name,
+    count: await api.countMoviesReleased(range, { genreId: genre.id }),
+  }));
+
+  return counts.filter(({ count }) => count > 0).sort((a, b) => b.count - a.count);
+}
+
 async function collectDashboard(api: TmdbApi, now: Date): Promise<DashboardData> {
-  const [monthlyCounts, current, prev, trendingMovies, trendingTv] = await Promise.all([
-    api.countMoviesByMonth(now.getFullYear()),
-    api.countMoviesReleased(getYearToDateRange(now)),
-    api.countMoviesReleased(getYearToDateRange(now, -1)),
-    api.getTrendingMovies(TIME_WINDOW),
-    api.getTrendingTv(TIME_WINDOW),
-  ]);
+  const year = now.getFullYear();
+  const [monthlyCurrent, monthlyPrev, current, prev, genreCounts, trendingMovies, trendingTv] =
+    await Promise.all([
+      api.countMoviesByMonth(year),
+      api.countMoviesByMonth(year - 1),
+      api.countMoviesReleased(getYearToDateRange(now)),
+      api.countMoviesReleased(getYearToDateRange(now, -1)),
+      collectGenreCounts(api, now),
+      api.getTrendingMovies(TIME_WINDOW),
+      api.getTrendingTv(TIME_WINDOW),
+    ]);
 
   return {
     schemaVersion: SCHEMA_VERSION,
     generatedAt: now.toISOString(),
     baseDate: toDateString(now),
     movies: {
-      monthlyCounts,
+      monthlyCounts: { current: monthlyCurrent, prev: monthlyPrev },
       yearToDateCounts: { current, prev },
+      genreCounts,
     },
     trending: {
       timeWindow: TIME_WINDOW,
@@ -135,9 +163,18 @@ async function main() {
     ),
   );
 
-  const { monthlyCounts, yearToDateCounts } = dashboard.movies;
-  console.log(`  월별 개봉: ${monthlyCounts.join(', ')}`);
-  console.log(`  연초~기준일 개봉: ${yearToDateCounts.current} (전년 동기 ${yearToDateCounts.prev})`);
+  const { monthlyCounts, yearToDateCounts, genreCounts } = dashboard.movies;
+  console.log(`  월별 개봉(올해): ${monthlyCounts.current.join(', ')}`);
+  console.log(`  월별 개봉(작년): ${monthlyCounts.prev.join(', ')}`);
+  console.log(
+    `  장르 TOP 3: ${genreCounts
+      .slice(0, 3)
+      .map((g) => `${g.name} ${g.count}`)
+      .join(', ')}`,
+  );
+  console.log(
+    `  연초~기준일 개봉: ${yearToDateCounts.current} (전년 동기 ${yearToDateCounts.prev})`,
+  );
   console.log(
     `  트렌딩: 영화 ${dashboard.trending.movies.length}, TV ${dashboard.trending.tvShows.length}`,
   );

@@ -1,0 +1,29 @@
+{
+  "id": 95350,
+  "mediaType": "tv",
+  "title": "랜턴스",
+  "originalTitle": "Lanterns",
+  "tagline": "오직 한 사람만이 반지를 낄 수 있다.",
+  "genres": [
+    {
+      "id": 18,
+      "name": "드라마"
+    },
+    {
+      "id": 9648,
+      "name": "미스터리"
+    },
+    {
+      "id": 10765,
+      "name": "Sci-Fi & Fantasy"
+    }
+  ],
+  "rating": 8.2,
+  "releaseDate": "2026-08-16",
+  "overview": "은하계를 지키는 경찰인 그린 랜턴의 전설 할 조던과 신입 존 스튜어트가 미국 중심부에서 벌어진 살인 사건을 수사하다가 우주의 비밀과 연결된 어두운 사건에 휘말린다.",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/sS3PSUIY0ULVHhtkJ8OA5Ypdksr.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/6gqezQJ2mkm4jreWwLyOZy2Vf6i.jpg",
+  "homepage": "https://www.hbo.com/content/lanterns",
+  "numberOfSeasons": 1,
+  "numberOfEpisodes": 8
+}

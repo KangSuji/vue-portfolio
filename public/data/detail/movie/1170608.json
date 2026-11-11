@@ -1,0 +1,24 @@
+{
+  "id": 1170608,
+  "mediaType": "movie",
+  "title": "듄: 파트 3",
+  "originalTitle": "Dune: Part Three",
+  "tagline": "그 장대한 결말",
+  "genres": [
+    {
+      "id": 878,
+      "name": "SF"
+    },
+    {
+      "id": 12,
+      "name": "모험"
+    }
+  ],
+  "rating": 0,
+  "releaseDate": "2026-12-15",
+  "overview": "절대 권력을 상속받은 폴이 피할 수 없는 운명을 선택하며 마주하게 되는 거대한 전쟁과 갈등을 그린 액션 블록버스터",
+  "posterUrl": "https://media.themoviedb.org/t/p/w220_and_h330_face/9gbBQGNb9q5HEEbU69uyxcwR1r.jpg",
+  "backdropUrl": "https://media.themoviedb.org/t/p/w780/i5E9H7Ik0u61ylDDTbmUpTL3Yw.jpg",
+  "homepage": "",
+  "runtime": 150
+}

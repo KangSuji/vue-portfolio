@@ -1,26 +1,134 @@
 {
-  "schemaVersion": 1,
-  "generatedAt": "2026-11-11T02:01:11.049Z",
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T02:25:30.296Z",
   "baseDate": "2026-11-11",
   "movies": {
-    "monthlyCounts": [
-      71,
-      49,
-      47,
-      63,
-      53,
-      47,
-      50,
-      44,
-      71,
-      71,
-      60,
-      22
-    ],
+    "monthlyCounts": {
+      "current": [
+        71,
+        49,
+        47,
+        63,
+        53,
+        47,
+        50,
+        44,
+        71,
+        71,
+        60,
+        22
+      ],
+      "prev": [
+        65,
+        50,
+        51,
+        60,
+        54,
+        55,
+        71,
+        57,
+        68,
+        78,
+        83,
+        63
+      ]
+    },
     "yearToDateCounts": {
       "current": 592,
       "prev": 638
-    }
+    },
+    "genreCounts": [
+      {
+        "id": 18,
+        "name": "드라마",
+        "count": 243
+      },
+      {
+        "id": 35,
+        "name": "코미디",
+        "count": 96
+      },
+      {
+        "id": 16,
+        "name": "애니메이션",
+        "count": 94
+      },
+      {
+        "id": 99,
+        "name": "다큐멘터리",
+        "count": 94
+      },
+      {
+        "id": 53,
+        "name": "스릴러",
+        "count": 80
+      },
+      {
+        "id": 10402,
+        "name": "음악",
+        "count": 79
+      },
+      {
+        "id": 28,
+        "name": "액션",
+        "count": 76
+      },
+      {
+        "id": 14,
+        "name": "판타지",
+        "count": 75
+      },
+      {
+        "id": 12,
+        "name": "모험",
+        "count": 66
+      },
+      {
+        "id": 27,
+        "name": "공포",
+        "count": 60
+      },
+      {
+        "id": 10749,
+        "name": "로맨스",
+        "count": 55
+      },
+      {
+        "id": 10751,
+        "name": "가족",
+        "count": 53
+      },
+      {
+        "id": 878,
+        "name": "SF",
+        "count": 49
+      },
+      {
+        "id": 80,
+        "name": "범죄",
+        "count": 46
+      },
+      {
+        "id": 9648,
+        "name": "미스터리",
+        "count": 35
+      },
+      {
+        "id": 36,
+        "name": "역사",
+        "count": 23
+      },
+      {
+        "id": 10752,
+        "name": "전쟁",
+        "count": 9
+      },
+      {
+        "id": 37,
+        "name": "서부",
+        "count": 2
+      }
+    ]
   },
   "trending": {
     "timeWindow": "week",
@@ -76,24 +184,14 @@
         "popularity": 204.8911
       },
       {
-        "id": 1483525,
+        "id": 1400837,
         "mediaType": "movie",
-        "title": "가능한 사랑",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/7UAzxqezg5yvZyK3k62wOAzg0Zs.jpg",
-        "description": "해고 노동자와 그의 아내 그리고 다큐멘터리 감독과 그녀의 남편. 두 부부가 다큐멘터리 제작을 계기로 만나, 서로의 다른 삶과 숨은 욕망을 마주한다.",
-        "releaseDate": "2026-09-23",
-        "rating": 7.6,
-        "popularity": 58.4342
-      },
-      {
-        "id": 656908,
-        "mediaType": "movie",
-        "title": "라마야나",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/gOWnXaBxqT6k2y40hKfYU6c0Ym.jpg",
-        "description": "고대 왕국 아요디아의 왕자 라마는 형제들과 함께 자라며 왕위를 이을 자로서 덕과 무예를 갈고닦는다. 수많은 시험을 이겨내고 미틸라의 공주 시타와 혼인한 그는 백성의 축복 속에 왕위 계승을 눈앞에 두지만, 아버지 다샤라타 왕이 오래전에 맺은 약속 하나가 모든 것을 뒤바꾼다. 라마는 아버지의 맹세를 지키기 위해 왕좌를 내려놓고 14년의 유배길에 오르고, 시타와 아우 락슈마나는 기꺼이 그 뒤를 따른다. 한편 바다 건너 황금의 섬 랑카에서는 불멸의 힘을 손에 넣은 마왕 라바나가 복수의 칼날을 갈고 있다. 숲속의 고요한 나날이 이어지던 어느 날, 아득한 옛날부터 라마와 라바나의 운명을 하나로 묶어 온 예언이 마침내 움직이기 시작하는데...",
-        "releaseDate": "2026-11-05",
-        "rating": 7.5,
-        "popularity": 175.7388
+        "title": "아더 마미",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/kNxRgcTeqeU5jauBackTERoO2De.jpg",
+        "description": "여덟 살 소녀 벨라의 집은 겉보기엔 평온하지만, 일에 쫓겨 늘 집을 비우는 엄마 어슐라와 집안을 돌보는 아빠 러스 사이에는 말하지 못한 균열이 깊어져 간다. 부모의 다툼을 숨죽여 듣는 밤이 늘어갈 무렵, 벨라의 방 옷장 속에서 엄마와 똑같은 얼굴을 한 존재가 모습을 드러낸다. 벨라가 '아더 마미'라 부르게 된 그것은 자주 비어 있던 엄마의 자리를 대신하듯 아이의 곁을 맴돌며 끊임없이 속삭인다. \"네 마음속에 들어가도 될까?\" 벨라는 그때마다 고개를 젓지만 차마 그것을 쫓아내지는 못한다. 그리고 러스가 아내와 똑같이 생긴 낯선 침입자를 목격하면서, 옷장 속에 머물던 기척은 집 안 곳곳으로 번져가기 시작한다. 눈앞의 엄마가 진짜인지조차 분간할 수 없게 된 가족, 아이의 마음을 원하는 그것이 노리는 것은 과연 무엇일까.",
+        "releaseDate": "2026-10-07",
+        "rating": 5.8,
+        "popularity": 156.3048
       },
       {
         "id": 1375441,
@@ -106,6 +204,16 @@
         "popularity": 86.8668
       },
       {
+        "id": 1483525,
+        "mediaType": "movie",
+        "title": "가능한 사랑",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/7UAzxqezg5yvZyK3k62wOAzg0Zs.jpg",
+        "description": "해고 노동자와 그의 아내 그리고 다큐멘터리 감독과 그녀의 남편. 두 부부가 다큐멘터리 제작을 계기로 만나, 서로의 다른 삶과 숨은 욕망을 마주한다.",
+        "releaseDate": "2026-09-23",
+        "rating": 7.6,
+        "popularity": 58.4342
+      },
+      {
         "id": 1294189,
         "mediaType": "movie",
         "title": "더 몽구스",
@@ -116,34 +224,14 @@
         "popularity": 172.0021
       },
       {
-        "id": 1400837,
+        "id": 656908,
         "mediaType": "movie",
-        "title": "아더 마미",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/kNxRgcTeqeU5jauBackTERoO2De.jpg",
-        "description": "여덟 살 소녀 벨라의 집은 겉보기엔 평온하지만, 일에 쫓겨 늘 집을 비우는 엄마 어슐라와 집안을 돌보는 아빠 러스 사이에는 말하지 못한 균열이 깊어져 간다. 부모의 다툼을 숨죽여 듣는 밤이 늘어갈 무렵, 벨라의 방 옷장 속에서 엄마와 똑같은 얼굴을 한 존재가 모습을 드러낸다. 벨라가 '아더 마미'라 부르게 된 그것은 자주 비어 있던 엄마의 자리를 대신하듯 아이의 곁을 맴돌며 끊임없이 속삭인다. \"네 마음속에 들어가도 될까?\" 벨라는 그때마다 고개를 젓지만 차마 그것을 쫓아내지는 못한다. 그리고 러스가 아내와 똑같이 생긴 낯선 침입자를 목격하면서, 옷장 속에 머물던 기척은 집 안 곳곳으로 번져가기 시작한다. 눈앞의 엄마가 진짜인지조차 분간할 수 없게 된 가족, 아이의 마음을 원하는 그것이 노리는 것은 과연 무엇일까.",
-        "releaseDate": "2026-10-07",
-        "rating": 5.8,
-        "popularity": 156.3048
-      },
-      {
-        "id": 1117898,
-        "mediaType": "movie",
-        "title": "모자 쓴 고양이",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/lgLg6T1kv7fjfANRNM1QSvPKDJM.jpg",
-        "description": "이제껏 본 적 없는 ‘씽’나는 ‘냥’리법석이 펼쳐진다! 기상천외한 마법으로 소동을 일으키는 ‘모자 쓴 고양이’에게 주어진 특급 임무! 잃어버린 ‘돌림시계’를 되찾기 위해 떠나는 새로운 모험! 상상력과 영감을 담당하는 비밀 기관 I.I.I.I.의 요원인 ‘모자 쓴 고양이’는 새로운 동네로 이사한 뒤 적응에 힘들어하는 남매 ‘가비’와 ‘세바스찬’에게 웃음과 기쁨을 되찾아 주라는 임무를 맡게 된다. 하지만 사고뭉치 ‘모자 쓴 고양이’는 집안을 난장판으로 만드는 것도 모자라 마법의 ‘돌림시계’를 잃어버리고 만다. 요원으로서의 능력을 검증받을 수 있는 마지막 기회, ‘모자 쓴 고양이’는 ‘가비’와 ‘세바스찬’ 남매에게 도움을 요청하는데... 과연 ‘돌림시계’를 되찾고 남매의 소원도 이루어줄 수 있을까?",
-        "releaseDate": "2026-10-31",
-        "rating": 7.2,
-        "popularity": 64.6966
-      },
-      {
-        "id": 1570488,
-        "mediaType": "movie",
-        "title": "반려견의 완벽한 크리스마스",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/zvsNAohDHRWcGvbPSD7r3WojpKb.jpg",
-        "description": "갑작스러운 건강 문제로 뿔뿔이 흩어진 고스 가족. 충직한 반려견 윈스테드는 크리스마스이브가 오기 전 가족을 다시 한 자리에 모으기 위해 온 힘을 다한다.",
-        "releaseDate": "2026-11-04",
-        "rating": 7.4,
-        "popularity": 120.0967
+        "title": "라마야나",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/gOWnXaBxqT6k2y40hKfYU6c0Ym.jpg",
+        "description": "고대 왕국 아요디아의 왕자 라마는 형제들과 함께 자라며 왕위를 이을 자로서 덕과 무예를 갈고닦는다. 수많은 시험을 이겨내고 미틸라의 공주 시타와 혼인한 그는 백성의 축복 속에 왕위 계승을 눈앞에 두지만, 아버지 다샤라타 왕이 오래전에 맺은 약속 하나가 모든 것을 뒤바꾼다. 라마는 아버지의 맹세를 지키기 위해 왕좌를 내려놓고 14년의 유배길에 오르고, 시타와 아우 락슈마나는 기꺼이 그 뒤를 따른다. 한편 바다 건너 황금의 섬 랑카에서는 불멸의 힘을 손에 넣은 마왕 라바나가 복수의 칼날을 갈고 있다. 숲속의 고요한 나날이 이어지던 어느 날, 아득한 옛날부터 라마와 라바나의 운명을 하나로 묶어 온 예언이 마침내 움직이기 시작하는데...",
+        "releaseDate": "2026-11-05",
+        "rating": 7.5,
+        "popularity": 175.7388
       },
       {
         "id": 1003596,
@@ -196,6 +284,16 @@
         "popularity": 71.7385
       },
       {
+        "id": 969681,
+        "mediaType": "movie",
+        "title": "스파이더맨: 브랜드 뉴 데이",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/mt6uZzy7DAsncHlGGzMsyNgLR6v.jpg",
+        "description": "4년 전 소중한 사람들을 지키기 위해 모두의 기억에서 사라진 피터 파커. 친절한 이웃 스파이더맨으로서 뉴욕을 지키며 고독한 삶을 살아가던 피터는 어느 날, 예상치 못한 DNA 변이로 인해 통제 불가능한 힘에 사로잡히고 그의 진짜 정체를 알고 있는 적까지 마주하게 된다. 타인의 의식을 조종하는 정체불명의 존재로 인해 모두가 피터를 노리는 적이 될 수 있는 혼란 속에서 피터는 다시 위협에 빠진 MJ와 모두를 지키기 위해 스파이더맨으로 그들 앞에 서게 되는데...",
+        "releaseDate": "2026-07-29",
+        "rating": 8.5,
+        "popularity": 354.1325
+      },
+      {
         "id": 1283515,
         "mediaType": "movie",
         "title": "베러티",
@@ -206,6 +304,26 @@
         "popularity": 162.0408
       },
       {
+        "id": 1170608,
+        "mediaType": "movie",
+        "title": "듄: 파트 3",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/9gbBQGNb9q5HEEbU69uyxcwR1r.jpg",
+        "description": "절대 권력을 상속받은 폴이 피할 수 없는 운명을 선택하며 마주하게 되는 거대한 전쟁과 갈등을 그린 액션 블록버스터",
+        "releaseDate": "2026-12-15",
+        "rating": 0,
+        "popularity": 25.3031
+      },
+      {
+        "id": 1570488,
+        "mediaType": "movie",
+        "title": "반려견의 완벽한 크리스마스",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/zvsNAohDHRWcGvbPSD7r3WojpKb.jpg",
+        "description": "갑작스러운 건강 문제로 뿔뿔이 흩어진 고스 가족. 충직한 반려견 윈스테드는 크리스마스이브가 오기 전 가족을 다시 한 자리에 모으기 위해 온 힘을 다한다.",
+        "releaseDate": "2026-11-04",
+        "rating": 7.4,
+        "popularity": 120.0967
+      },
+      {
         "id": 791523,
         "mediaType": "movie",
         "title": "와일드우드",
@@ -214,29 +332,9 @@
         "releaseDate": "2026-10-19",
         "rating": 8.5,
         "popularity": 90.6962
-      },
-      {
-        "id": 969681,
-        "mediaType": "movie",
-        "title": "스파이더맨: 브랜드 뉴 데이",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/mt6uZzy7DAsncHlGGzMsyNgLR6v.jpg",
-        "description": "4년 전 소중한 사람들을 지키기 위해 모두의 기억에서 사라진 피터 파커. 친절한 이웃 스파이더맨으로서 뉴욕을 지키며 고독한 삶을 살아가던 피터는 어느 날, 예상치 못한 DNA 변이로 인해 통제 불가능한 힘에 사로잡히고 그의 진짜 정체를 알고 있는 적까지 마주하게 된다. 타인의 의식을 조종하는 정체불명의 존재로 인해 모두가 피터를 노리는 적이 될 수 있는 혼란 속에서 피터는 다시 위협에 빠진 MJ와 모두를 지키기 위해 스파이더맨으로 그들 앞에 서게 되는데...",
-        "releaseDate": "2026-07-29",
-        "rating": 8.5,
-        "popularity": 354.1325
       }
     ],
     "tvShows": [
-      {
-        "id": 279185,
-        "mediaType": "tv",
-        "title": "Zmora",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/1QHUcRLXQ5N6MemM1j45RMoxM7l.jpg",
-        "description": "",
-        "releaseDate": "2026-10-02",
-        "rating": 7,
-        "popularity": 19.4813
-      },
       {
         "id": 1489,
         "mediaType": "tv",
@@ -258,6 +356,16 @@
         "popularity": 221.0584
       },
       {
+        "id": 279246,
+        "mediaType": "tv",
+        "title": "재혼 황후",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/9mVhSAIZERTDw7dWbbGuJegCDjl.jpg",
+        "description": "명석함과 타고난 기품으로 제국을 단단히 지탱해 온 동대제국의 황후 나비에는 황제이자 평생의 동반자라 믿었던 소비에슈와 함께 완벽한 제국을 이끌어왔다. 그러나 어느 날, 황제는 도망 노예 출신 라스타를 궁으로 들이며 그녀를 곁에 두겠다고 선언한다. 황후의 자리와 사랑이 동시에 흔들리는 순간에도 나비에는 감정에 휘둘리지 않는다. 그리고 신년제를 맞아 방문한 서왕국의 왕자 하인리는 그녀의 완벽함 뒤에 숨겨진 외로움과 강인함을 단번에 꿰뚫어 본다. 소비에슈가 라스타를 다음 황후로 세우겠다는 약속을 한 순간, 나비에는 깨닫는다. 지키는 것만으로는 더 이상 황후일 수 없다는 것을. 버려지는 황후가 아니라, 스스로 선택하는 황후가 되기 위해 그녀는 인생을 건 결단을 내린다.",
+        "releaseDate": "2026-11-03",
+        "rating": 8.4,
+        "popularity": 210.4373
+      },
+      {
         "id": 225385,
         "mediaType": "tv",
         "title": "블랙 도브",
@@ -266,26 +374,6 @@
         "releaseDate": "2024-12-05",
         "rating": 7,
         "popularity": 91.5073
-      },
-      {
-        "id": 96677,
-        "mediaType": "tv",
-        "title": "뤼팽",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/e0i0ALSg9yspnYkmII6Pru32RbB.jpg",
-        "description": "25년 전, 세네갈 이민자인 아버지 바바카르는 부유한 펠레그리니 가문으로부터 값비싼 목걸이를 훔쳤다는 누명을 쓰고 감옥에서 생을 마감했다. 홀로 남겨진 소년 아산 디옵은 아버지가 남긴 괴도 아르센 뤼팽의 소설을 품고 자랐고, 이제 그는 뤼팽처럼 변장과 속임수의 달인이 되어 있다. 문제의 목걸이가 루브르 박물관 경매에 나온다는 소식을 들은 아산은 대담한 절도 계획을 세우고, 이를 발판 삼아 아버지를 파멸로 몰아넣은 자들의 진실에 다가가려 한다. 파리의 거리를 무대로 경찰과 거대한 권력을 상대하는 아산의 기발하고 우아한 복수극이 막을 올린다.",
-        "releaseDate": "2021-01-08",
-        "rating": 7.7,
-        "popularity": 95.6771
-      },
-      {
-        "id": 253372,
-        "mediaType": "tv",
-        "title": "인스티튜트",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/4MwXkOAMd9ObxdacasPFM32n9dZ.jpg",
-        "description": "한밤중, 미니애폴리스의 교외에 위치한 열두 살 루크의 집에 괴한들이 침입해 부모님을 살해하고 루크를 납치한다. 루크는 원래 자신의 것과 거의 똑같은 모양으로 꾸며져 있는 방에서 깨어난다. 그곳은 TP(텔레파시)와 TK(염력)을 가진 아이들을 모아놓고 가혹한 훈련과 실험을 통해 그들의 능력을 키워 테러에 사용하는 ‘시설’이었다. 루크는 고문과 체벌을 당하며 자신이 익히 알아 온 세계관이 완전히 뒤바뀌는 경험을 하고, 그곳을 탈출하기로 결심한다. 귀에는 GPS칩이 삽입되어 있고, ‘시설’은 인근에 집이라고는 없는 깊은 숲속에 자리한 채 철책으로 둘러싸여 있으며, 루크 자신은 부모님의 죽음에 유력한 용의자로 지목되어 있는 등 상황은 그에게 전혀 유리하지 않다. 하지만 실험 약물의 부작용으로 입소자가 죽는 사건이 발생하자, 루크는 인간으로서의 자신을 잃느니 차라리 죽는 게 낫다는 생각에 정신이 번쩍 드는데…….",
-        "releaseDate": "2025-07-13",
-        "rating": 7.5,
-        "popularity": 43.9277
       },
       {
         "id": 247718,
@@ -298,14 +386,24 @@
         "popularity": 371.6593
       },
       {
-        "id": 279246,
+        "id": 96677,
         "mediaType": "tv",
-        "title": "재혼 황후",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/9mVhSAIZERTDw7dWbbGuJegCDjl.jpg",
-        "description": "명석함과 타고난 기품으로 제국을 단단히 지탱해 온 동대제국의 황후 나비에는 황제이자 평생의 동반자라 믿었던 소비에슈와 함께 완벽한 제국을 이끌어왔다. 그러나 어느 날, 황제는 도망 노예 출신 라스타를 궁으로 들이며 그녀를 곁에 두겠다고 선언한다. 황후의 자리와 사랑이 동시에 흔들리는 순간에도 나비에는 감정에 휘둘리지 않는다. 그리고 신년제를 맞아 방문한 서왕국의 왕자 하인리는 그녀의 완벽함 뒤에 숨겨진 외로움과 강인함을 단번에 꿰뚫어 본다. 소비에슈가 라스타를 다음 황후로 세우겠다는 약속을 한 순간, 나비에는 깨닫는다. 지키는 것만으로는 더 이상 황후일 수 없다는 것을. 버려지는 황후가 아니라, 스스로 선택하는 황후가 되기 위해 그녀는 인생을 건 결단을 내린다.",
-        "releaseDate": "2026-11-03",
+        "title": "뤼팽",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/e0i0ALSg9yspnYkmII6Pru32RbB.jpg",
+        "description": "25년 전, 세네갈 이민자인 아버지 바바카르는 부유한 펠레그리니 가문으로부터 값비싼 목걸이를 훔쳤다는 누명을 쓰고 감옥에서 생을 마감했다. 홀로 남겨진 소년 아산 디옵은 아버지가 남긴 괴도 아르센 뤼팽의 소설을 품고 자랐고, 이제 그는 뤼팽처럼 변장과 속임수의 달인이 되어 있다. 문제의 목걸이가 루브르 박물관 경매에 나온다는 소식을 들은 아산은 대담한 절도 계획을 세우고, 이를 발판 삼아 아버지를 파멸로 몰아넣은 자들의 진실에 다가가려 한다. 파리의 거리를 무대로 경찰과 거대한 권력을 상대하는 아산의 기발하고 우아한 복수극이 막을 올린다.",
+        "releaseDate": "2021-01-08",
+        "rating": 7.7,
+        "popularity": 95.6771
+      },
+      {
+        "id": 303044,
+        "mediaType": "tv",
+        "title": "캠퍼스 드라이버",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/qSIqjMlu43n047tmxnFGpu5vuQ1.jpg",
+        "description": "로이스는 평생의 사랑인 막스와 함께 벨로즈 국제 학교에 도착한다. 캠퍼스에서 가장 인기 있는 앱 '캠퍼스 드라이버'의 창시자 레인은 누구에게도 정을 붙이지 않기로 유명하다. 이들은 애초에 서로 얽힐 운명이 아니었다 하지만 어떠한 만남은 모든 걸 바꾸어 놓고 오랜 상처를 다시 들쑤시기도 한다. 그리고 사랑이 예고 없이 찾아올 땐 모든 게 불확실해진다.",
+        "releaseDate": "2026-11-06",
         "rating": 8.4,
-        "popularity": 210.4373
+        "popularity": 171.1181
       },
       {
         "id": 259909,
@@ -318,26 +416,6 @@
         "popularity": 96.1596
       },
       {
-        "id": 289517,
-        "mediaType": "tv",
-        "title": "꿀알바",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/yyA9CI8BLNg6LtVRvmVxki4xiGb.jpg",
-        "description": "빚에 쫓기던 청년 혁준 앞에 나타난 수상한 인력사무소. 시급은 최소 50배, 살아서 퇴근하면 다음엔 더 많이 준다? 가난에서 벗어나기 위해 오늘도 그는 알바 자리를 수락한다.",
-        "releaseDate": "2026-10-30",
-        "rating": 7.5,
-        "popularity": 101.5039
-      },
-      {
-        "id": 303044,
-        "mediaType": "tv",
-        "title": "캠퍼스 드라이버",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/qSIqjMlu43n047tmxnFGpu5vuQ1.jpg",
-        "description": "로이스는 평생의 사랑인 막스와 함께 벨로즈 국제 학교에 도착한다. 캠퍼스에서 가장 인기 있는 앱 '캠퍼스 드라이버'의 창시자 레인은 누구에게도 정을 붙이지 않기로 유명하다. 이들은 애초에 서로 얽힐 운명이 아니었다 하지만 어떠한 만남은 모든 걸 바꾸어 놓고 오랜 상처를 다시 들쑤시기도 한다. 그리고 사랑이 예고 없이 찾아올 땐 모든 게 불확실해진다.",
-        "releaseDate": "2026-11-06",
-        "rating": 8.3,
-        "popularity": 171.1181
-      },
-      {
         "id": 258989,
         "mediaType": "tv",
         "title": "더 그레이티스트",
@@ -348,24 +426,34 @@
         "popularity": 38.2951
       },
       {
-        "id": 81723,
+        "id": 279155,
         "mediaType": "tv",
-        "title": "길디드 에이지",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/lzZ8YN9fO6APr2RfmHd3iyxm7Ym.jpg",
-        "description": "부가 쌓이고 낡은 질서가 흔들리는 1880년대 뉴욕에서, 아버지를 잃은 메리언은 전통을 중시하는 고모들의 집에서 새 삶을 시작한다. 작가 지망생 페기와 우정을 쌓는 그녀 앞에는 혈통과 가문을 중시하는 사교계의 보이지 않는 규칙이 펼쳐진다. 맞은편 저택의 철도 재벌 러셀 부부는 막대한 재산을 갖고도 받아들여지지 않자, 자신들의 자리를 얻기 위해 기존 명문가와 맞선다. 연회와 우아한 인사 뒤에는 사업과 결혼, 평판을 둘러싼 계산이 숨어 있고, 집안에서 일하는 이들도 저마다의 미래를 꿈꾼다. 급변하는 도시에서 여성과 흑인에게 허락된 기회의 한계는 돈과 신분의 경쟁에 또 다른 질문을 던진다. 메리언은 남들이 정한 자리와 자신이 원하는 삶 사이에서 스스로 설 곳을 찾아간다.",
-        "releaseDate": "2022-01-24",
-        "rating": 7.7,
-        "popularity": 51.331
+        "title": "곡우",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/hSFJukkkPgVWrVfayx68yrwCVcv.jpg",
+        "description": "1994년, 춘장시 세무조사관 어우양쉬와 형사 옌핑안, 그리고 아내를 찾아 나선 저우하이양은 인보이스 위조 사건을 계기로 서로 알게 된다. 시대의 격랑 속에서 세 사람은 각기 다른 처지에 놓이며 운명은 점차 갈라진다. 몇 년 후, ‘곡우 작전’이 이들을 다시 만나게 하지만, 한때의 친구들은 이미 서로 반대편에 서 있다. 어우양쉬는 저우하이양을 우두머리로 한 탈세 사기 조직과 그 배후의 보호 세력에 맞서며, 정과 법리 사이에서 어려운 선택을 해야 한다. 위조 인보이스 한 장에서 시작해 탐욕의 장막을 찢어발기고, 마침내 악을 척결하며 정의를 지켜낸다.",
+        "releaseDate": "2026-11-05",
+        "rating": 9,
+        "popularity": 13.074
       },
       {
-        "id": 292741,
+        "id": 300146,
         "mediaType": "tv",
-        "title": "'녹턴' - Nocturne",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/cL5V8GulG2GEeSJb3GkNblWeUmQ.jpg",
-        "description": "악명 높은 연쇄 살인마 유렉 월터의 피해자가 살아 돌아오자 조나 린 형사는 실종 상태인 다른 한 사람을 찾기 위해 시간과의 싸움을 시작하고 그의 후배 사가 바우어는 살인마에게서 직접 단서를 얻기 위해 위장 잠입을 감행한다.",
-        "releaseDate": "2026-10-29",
-        "rating": 7.8,
-        "popularity": 69.1691
+        "title": "가금채",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/lmvbyTinVPHrbplMIV5151OqYzK.jpg",
+        "description": "거리를 떠돌며 괴롭힘을 당하던 아처우는 후부의 아가씨 웨이라오(쥔다이)와 얼굴이 매우 흡사했기에 뜻밖에도 국공부 세자 루줘의 액막이 신부가 된다. 야심이 들끓던 아처우는 이 기회로 신분상승을 노리지만 곧 죽음을 앞뒀던 남편 루줘가 갑자기 의식을 회복하며 연이은 악재가 찾아온다. 사실은 웨이라오인 척 하던 가짜 아가씨 쥔다이는 아처우가 자신의 자리를 차지한 것을 증오하며 그녀를 제거하려 하지만 루줘는 백방으로 그 계략들을 방비한다. 허아 평화로워 보이던 국공부에도 흉계과 살기들이 곳곳에 도사리고 있었으니...",
+        "releaseDate": "2026-10-16",
+        "rating": 7,
+        "popularity": 60.0523
+      },
+      {
+        "id": 289517,
+        "mediaType": "tv",
+        "title": "꿀알바",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/yyA9CI8BLNg6LtVRvmVxki4xiGb.jpg",
+        "description": "빚에 쫓기던 청년 혁준 앞에 나타난 수상한 인력사무소. 시급은 최소 50배, 살아서 퇴근하면 다음엔 더 많이 준다? 가난에서 벗어나기 위해 오늘도 그는 알바 자리를 수락한다.",
+        "releaseDate": "2026-10-30",
+        "rating": 7.5,
+        "popularity": 101.5039
       },
       {
         "id": 84773,
@@ -378,6 +466,36 @@
         "popularity": 157.6506
       },
       {
+        "id": 95350,
+        "mediaType": "tv",
+        "title": "랜턴스",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/sS3PSUIY0ULVHhtkJ8OA5Ypdksr.jpg",
+        "description": "은하계를 지키는 경찰인 그린 랜턴의 전설 할 조던과 신입 존 스튜어트가 미국 중심부에서 벌어진 살인 사건을 수사하다가 우주의 비밀과 연결된 어두운 사건에 휘말린다.",
+        "releaseDate": "2026-08-16",
+        "rating": 8.2,
+        "popularity": 43.86
+      },
+      {
+        "id": 253372,
+        "mediaType": "tv",
+        "title": "인스티튜트",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/4MwXkOAMd9ObxdacasPFM32n9dZ.jpg",
+        "description": "한밤중, 미니애폴리스의 교외에 위치한 열두 살 루크의 집에 괴한들이 침입해 부모님을 살해하고 루크를 납치한다. 루크는 원래 자신의 것과 거의 똑같은 모양으로 꾸며져 있는 방에서 깨어난다. 그곳은 TP(텔레파시)와 TK(염력)을 가진 아이들을 모아놓고 가혹한 훈련과 실험을 통해 그들의 능력을 키워 테러에 사용하는 ‘시설’이었다. 루크는 고문과 체벌을 당하며 자신이 익히 알아 온 세계관이 완전히 뒤바뀌는 경험을 하고, 그곳을 탈출하기로 결심한다. 귀에는 GPS칩이 삽입되어 있고, ‘시설’은 인근에 집이라고는 없는 깊은 숲속에 자리한 채 철책으로 둘러싸여 있으며, 루크 자신은 부모님의 죽음에 유력한 용의자로 지목되어 있는 등 상황은 그에게 전혀 유리하지 않다. 하지만 실험 약물의 부작용으로 입소자가 죽는 사건이 발생하자, 루크는 인간으로서의 자신을 잃느니 차라리 죽는 게 낫다는 생각에 정신이 번쩍 드는데…….",
+        "releaseDate": "2025-07-13",
+        "rating": 7.5,
+        "popularity": 43.9277
+      },
+      {
+        "id": 292741,
+        "mediaType": "tv",
+        "title": "'녹턴' - Nocturne",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/cL5V8GulG2GEeSJb3GkNblWeUmQ.jpg",
+        "description": "악명 높은 연쇄 살인마 유렉 월터의 피해자가 살아 돌아오자 조나 린 형사는 실종 상태인 다른 한 사람을 찾기 위해 시간과의 싸움을 시작하고 그의 후배 사가 바우어는 살인마에게서 직접 단서를 얻기 위해 위장 잠입을 감행한다.",
+        "releaseDate": "2026-10-29",
+        "rating": 7.8,
+        "popularity": 69.1691
+      },
+      {
         "id": 37854,
         "mediaType": "tv",
         "title": "원피스",
@@ -388,44 +506,34 @@
         "popularity": 261.1267
       },
       {
-        "id": 456,
+        "id": 270431,
         "mediaType": "tv",
-        "title": "심슨 가족",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/7HKQieF8YqXgTwBVjWFGWaEKNS7.jpg",
-        "description": "1989년 12월 FOX에서 방영을 시작한 애니메이션. 미국의 스프링필드를 배경으로 먹는 걸 유난히 밝히고 게으르며 독특한 성격의 가장 호머, 항상 사고만 치고 다니는 남편과 아이들의 뒤치다꺼리를 도맡아 하는 엄마 마지, 하루라도 장난을 치지 않고 넘어가는 날이 없는 장난꾸러기 아들 바트, 나이에 비해 꽤나 어른스럽고 똑똑한 리사, 그리고 말은 한마디도 못하지만 의외의 대활약을 보여주는 막내 메기 등 각각의 개성 만점 가족 구성원들이 펼치는 극적인 하루하루를 그리고 있다.",
-        "releaseDate": "1989-12-17",
-        "rating": 8,
-        "popularity": 1317.9132
+        "title": "절월량: 달을 만났을 때",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/afORbhMsxm9Ps12cMw9AssNdph7.jpg",
+        "description": "대인기피증이 심한 윈리는 독립을 증명하기 위해 난우에서 대학원에 진학하고, 고등학생 때부터 짝사랑했던 천재 푸스저와 재회한다.",
+        "releaseDate": "2026-11-05",
+        "rating": 9.2,
+        "popularity": 39.3511
       },
       {
-        "id": 95480,
+        "id": 153312,
         "mediaType": "tv",
-        "title": "'슬로 호시스' - Slow Horses",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/q2euJL6499Xuw7IBi207aKxOesn.jpg",
-        "description": "이 재기 넘치는 첩보 드라마는 무능력한 MI5 요원들로 구성된 팀과 혐오스러운 팀장 잭슨 램이 사악한 세력으로부터 영국을 지키기 위해 첩보 세계의 연막과 은폐를 파헤치는 과정을 보여 준다.",
-        "releaseDate": "2022-04-01",
-        "rating": 8.1,
-        "popularity": 128.4008
+        "title": "털사 킹",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/2FsXAf6QHkieAM4as5Xxe9W0D1P.jpg",
+        "description": "조직을 위해 입을 다문 채 25년을 교도소에서 보낸 뉴욕 마피아의 카포 드와이트 맨프레디. 출소한 그를 기다린 것은 보상이 아니라 오클라호마주 털사로 가서 새 사업을 일구라는 사실상의 추방 명령이다. 스마트폰조차 낯선 일흔다섯의 노장은 공항에서 만난 택시 기사 타이슨을 운전기사로 고용하고, 무허가로 영업하던 대마초 판매점을 첫 사업 상대로 삼아 낯선 땅에 자신만의 조직을 꾸리기 시작한다. 하지만 털사에는 이미 영역을 지키려는 폭주족 갱단이 버티고 있고, 연방 수사기관의 감시도 그를 뒤쫓는다. 자신을 버린 옛 조직에 등을 돌린 드와이트는 노련한 수완과 주먹으로 털사의 새로운 왕이 되려 한다.",
+        "releaseDate": "2022-11-13",
+        "rating": 8.3,
+        "popularity": 224.4507
       },
       {
-        "id": 307853,
+        "id": 314271,
         "mediaType": "tv",
-        "title": "오늘은 여우비",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/reDzSqynyCv734aXv9NflnpflMo.jpg",
-        "description": "어려운 형편 속에서 장학금을 위해 노력하는 대학생 정우(양초월)와 복학 후 학과 1위를 차지한 진연주(동사성)가 만나 서로의 상처를 이해하며 성장하는 이야기입니다.",
-        "releaseDate": "2026-11-06",
-        "rating": 9.5,
-        "popularity": 25.0773
-      },
-      {
-        "id": 2734,
-        "mediaType": "tv",
-        "title": "로 앤 오더: 성범죄전담반",
-        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/7a8WhPYJU7fNFnES90QL5Oiq6Xj.jpg",
-        "description": "추악한 성범죄를 수사하는 뉴욕 경찰 성범죄전담수사반의 활약을 그린 드라마.",
-        "releaseDate": "1999-09-20",
-        "rating": 8,
-        "popularity": 1401.7475
+        "title": "배스 X 마키나",
+        "image": "https://media.themoviedb.org/t/p/w220_and_h330_face/y9c1AwrldWRsY9edSf21cOgbI0h.jpg",
+        "description": "무법자와 기계, 초자연적 존재들이 판치는 스팀펑크 서부. 한 아버지가 가족을 지키기 위해 홀로 판사와 배심원, 사형 집행인 역할까지 떠맡게 된다.",
+        "releaseDate": "2026-11-03",
+        "rating": 7.9,
+        "popularity": 31.7097
       }
     ]
   }
